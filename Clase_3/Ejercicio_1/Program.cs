@@ -16,50 +16,38 @@ namespace Ejercicio_1
 
         }
 
-        public static int ContarPalindromosIII(ArrayList palabras)
+        public static void ContarPalindromosIII(ArrayList palabras)
         {
-            int totalPalindromos = 0;
-
             int indice = 0;
 
             while (indice < palabras.Count)
             {
                 if(esPalindromo((string)palabras[indice]))
 
-                indice++;
-            }
-
-            return totalPalindromos;    
+                    Console.WriteLine(palabras[indice]);
+            }   
         }
 
-        public static int ContarPalindromosII(ArrayList palabras)
+        public static void ContarPalindromosII(ArrayList palabras)
         {
-            int totalPalindromos = 0;
-
             for (int i = 0; i < palabras.Count; i++)
             {
                 if (esPalindromo((string)palabras[i]))
                 {
-                    totalPalindromos++;
+                    Console.WriteLine(palabras[i]);
                 }
             }
-
-            return totalPalindromos;
         }
 
-        public static int ContarPalindromosI(ArrayList palabras)
-        {
-            int totalPalindromos = 0;
-
+        public static void ContarPalindromosI(ArrayList palabras)
+        { 
             foreach (string palabra in palabras)
             {
                 if (esPalindromo(palabra))
                 {
-                    totalPalindromos++; 
+                    Console.WriteLine(palabra); 
                 }
             }
-
-            return totalPalindromos;
         }
 
         public static bool esPalindromo(string palabra)
@@ -69,6 +57,11 @@ namespace Ejercicio_1
             return palabra == palabraInvertida;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="palabra"></param>
+        /// <returns></returns>
         public static string InvertirPalabra(string palabra)
         {
             string palabraInvertida = string.Empty;
