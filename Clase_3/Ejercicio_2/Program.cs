@@ -19,7 +19,9 @@ namespace Ejercicio_2
 
             ArrayList alumnos = new ArrayList();
 
-            MostrarMenu();
+            CompetenciaDeMatematica(alumnos); // Mejorar el nombre.
+
+            // Recorrer la lista para ver si funciona InscribirAlumno.
 
         }
 
@@ -38,7 +40,7 @@ namespace Ejercicio_2
             Console.WriteLine(sb.ToString());
         }
 
-        public static void MostrarMenu()
+        public static void CompetenciaDeMatematica(ArrayList alumnos)
         {
             string opcionElegida;
 
@@ -51,7 +53,8 @@ namespace Ejercicio_2
                 switch (opcionElegida)
                 {
                     case "A":
-                        Console.WriteLine("Inscribir alumno");
+                        Console.WriteLine("Inscribir alumno:");
+                        InscribirAlumno(ref alumnos);
                         break;
                     case "B":
                         Console.WriteLine("Borrar alumno");
