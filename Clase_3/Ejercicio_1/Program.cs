@@ -14,6 +14,25 @@ namespace Ejercicio_1
             //ii.B) utilizando la sentencia for
             //iii.C) utilizando la sentencia foreach
 
+            ArrayList palabras = new ArrayList();
+
+            string palabra;
+
+            while (true)
+            {
+                Console.WriteLine("Palabra:");
+
+                palabra = Console.ReadLine();
+
+                if (palabra == string.Empty)
+                {
+                    break;
+                }
+
+                palabras.Add(palabra);  
+            }
+
+            ContarPalindromosI(palabras);
         }
 
         public static void ContarPalindromosIII(ArrayList palabras)
