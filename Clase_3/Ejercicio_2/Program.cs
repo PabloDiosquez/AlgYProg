@@ -53,20 +53,20 @@ namespace Ejercicio_2
                 switch (opcionElegida)
                 {
                     case "A":
-                        Console.WriteLine("Inscribir alumno:");
                         InscribirAlumno(ref alumnos);
                         break;
                     case "B":
-                        Console.WriteLine("Borrar alumno");
+                        ArrayList alumno = new ArrayList();
+                        BorrarAlumno(alumno, ref alumnos);
                         break;
                     case "C":
-                        Console.WriteLine("Indicar total alumnos inscriptos");
+                        Console.WriteLine($"Total alumnos inscriptos: {alumnos.Count}");
                         break;
                     case "D":
-                        Console.WriteLine("Indicar escuelas ...");
+                        Console.WriteLine($"Total de escuelas con al menos un alumno inscripto: {ContarEscuelasInscriptas(alumnos)}");
                         break;
                     case "E":
-                        Console.WriteLine("Imprimir listado de escuelas ...");
+                        ImprimirListadoDeEscuelas(alumnos);
                         break;
                     case "S":
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -97,6 +97,77 @@ namespace Ejercicio_2
 
         }
 
-        
+        public static bool BorrarAlumno(ArrayList alumnoABorrar, ref ArrayList alumnos) 
+        {
+            foreach (ArrayList alumno in alumnos)
+            {
+                if (alumno[0] == alumnoABorrar[0])
+                {
+                    alumnos.Remove(alumno);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static int ContarEscuelasInscriptas(ArrayList alumnos)
+        {
+            ArrayList escuelas = new ArrayList();
+
+            string escuela;
+
+            foreach (ArrayList alumno in alumnos)
+            {
+                escuela = (string)alumno[2];
+
+                if (!estaEn(escuela, escuelas))
+                {
+                    escuelas.Add(escuela);
+                }
+
+            }
+            
+            return escuelas.Count;    
+        }
+
+        public static bool estaEn(string palabraABuscar, ArrayList palabras)
+        {
+            foreach (string palabra in palabras)
+            {
+                if (palabra == palabraABuscar) 
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static void ImprimirListadoDeEscuelas(ArrayList alumnos)
+        {
+            string escuela;
+
+            ArrayList escuelas = new ArrayList();   
+
+            foreach (ArrayList alumno in alumnos)
+            {
+                escuela= (string)alumno[2];
+
+                if (!estaEn(escuela, escuelas)) 
+                {
+                    escuelas.Add(escuela);
+                }
+            }
+
+            escuelas.Sort();
+
+            foreach (string escuelaInscripta in escuelas)
+            {
+                Console.WriteLine($"Escuela: {escuelaInscripta}");
+            }
+        }
+
     }
 }
