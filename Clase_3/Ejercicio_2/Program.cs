@@ -25,21 +25,6 @@ namespace Ejercicio_2
 
         }
 
-        public static void ImprimirMenu() 
-        {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine("◾◾◾ Menú de opciones ◾◾◾");
-            sb.AppendLine("a. Inscribir un alumno. (A)");
-            sb.AppendLine("b. Borrar un alumno.    (B)");
-            sb.AppendLine("c. Indicar total de alumnos inscriptos. (C)");
-            sb.AppendLine("d. Indicar total de escuelas que al menos tienen un alumno inscripto. (D)");
-            sb.AppendLine("e. Imprimir el listado de las escuelas, ordenado alfabéticamente, sin repeticiones (E)");
-            sb.AppendLine("f. Salir (S)");
-
-            Console.WriteLine(sb.ToString());
-        }
-
         public static void CompetenciaDeMatematica(ArrayList alumnos)
         {
             string opcionElegida;
@@ -78,6 +63,21 @@ namespace Ejercicio_2
                 }
 
             } while (opcionElegida != "S");
+        }
+
+        public static void ImprimirMenu()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("◾◾◾ Menú de opciones ◾◾◾");
+            sb.AppendLine("a. Inscribir un alumno. (A)");
+            sb.AppendLine("b. Borrar un alumno.    (B)");
+            sb.AppendLine("c. Indicar total de alumnos inscriptos. (C)");
+            sb.AppendLine("d. Indicar total de escuelas que al menos tienen un alumno inscripto. (D)");
+            sb.AppendLine("e. Imprimir el listado de las escuelas, ordenado alfabéticamente, sin repeticiones (E)");
+            sb.AppendLine("f. Salir (S)");
+
+            Console.WriteLine(sb.ToString());
         }
 
         public static void InscribirAlumno(ref ArrayList alumnos)
@@ -132,19 +132,6 @@ namespace Ejercicio_2
             return escuelas.Count;    
         }
 
-        public static bool estaEn(string palabraABuscar, ArrayList palabras)
-        {
-            foreach (string palabra in palabras)
-            {
-                if (palabra == palabraABuscar) 
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public static void ImprimirListadoDeEscuelas(ArrayList alumnos)
         {
             string escuela;
@@ -153,7 +140,7 @@ namespace Ejercicio_2
 
             foreach (ArrayList alumno in alumnos)
             {
-                escuela= (string)alumno[2];
+                escuela = (string)alumno[2];
 
                 if (!estaEn(escuela, escuelas)) 
                 {
@@ -167,6 +154,19 @@ namespace Ejercicio_2
             {
                 Console.WriteLine($"Escuela: {escuelaInscripta}");
             }
+        }
+
+        public static bool estaEn(string palabraABuscar, ArrayList palabras)
+        {
+            foreach (string palabra in palabras)
+            {
+                if (palabra == palabraABuscar)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
     }
