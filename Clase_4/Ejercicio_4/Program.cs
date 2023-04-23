@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Ejercicio_4
 {
@@ -6,9 +7,11 @@ namespace Ejercicio_4
     {
         static void Main(string[] args)
         {
-            Persona persona;
+            ArrayList personas = new ArrayList();   
 
             string datos;
+
+            int indice = 1;
 
             while (true)
             {
@@ -21,7 +24,14 @@ namespace Ejercicio_4
                     break;
                 }
 
-                persona = new Persona(datos);
+                personas.Add(new Persona(datos));
+            }
+
+            foreach (Persona persona in personas)
+            {
+                Console.WriteLine($"{indice} {persona.MostrarDatos()}");
+
+                indice++;
             }
         }
     }
