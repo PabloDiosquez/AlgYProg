@@ -1,0 +1,28 @@
+using System;
+
+public static void Main(string[] args)
+    {
+        Console.WriteLine("Cordenada x del primer punto:");
+        int coorX1 = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Coordena y del primer punto:");
+        int coordY1 = int.Parse(Console.ReadLine());
+        
+        puntoDelPlano primerPunto = crear(coorX1, coordY1);
+        
+        Console.WriteLine("Cordenada x del segundo punto:");
+        int coorX2 = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Coordena y del segundo punto:");
+        int coordY2 = int.Parse(Console.ReadLine());
+        
+        puntoDelPlano segundoPunto = crear(coorX2, coordY2);
+        
+        int dx = primerPunto.coordX() - segundoPunto.coordX();
+        
+        int dy = primerPunto.coordY() - segundoPunto.coordY();
+        
+        double distancia = Math.sqrt(Math.Pow(dx,2) + Math.Pow(dy,2));
+        
+        Console.WriteLine("Distancia entre los puntos: {0}", distancia);
+    }

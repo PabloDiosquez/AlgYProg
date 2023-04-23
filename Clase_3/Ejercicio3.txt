@@ -1,0 +1,24 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Día:");
+        int dia = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Mes:");
+        int mes = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Año:");
+        int año = int.Parse(Console.ReadLine());
+        
+       fechaNac fechaDeNacimiento = crearFecha(dia, mes, año);
+
+       int edad = fechaDeNacimiento.edad(21,4,2023);
+       
+       Console.WriteLine("Fecha de nacimiento: {0} del {1} de {2}", fechaDeNacimiento.verDia(), fechaDeNacimiento.verMes(), fechaDeNacimiento.verAño());
+       
+       Console.WriteLine("Su edad actual es {0}", edad;
+    }
+}
