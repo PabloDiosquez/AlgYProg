@@ -42,5 +42,10 @@ namespace Ejercicio_4
             return $"{nombre} ({edad}) {dni}";
         }
 
+        public bool esMayorQue(Persona persona)
+        {
+            return edad > persona.edad;
+        }
+
     }
 }
