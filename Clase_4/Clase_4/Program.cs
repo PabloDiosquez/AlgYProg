@@ -9,6 +9,18 @@ namespace Clase_4
             MiPrimerClase objeto1 = new MiPrimerClase();
 
             objeto1.Imprimir();
+
+            // ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪ //
+
+            // Clase Auto
+
+            Auto auto1;
+
+            Auto auto2;
+
+            auto1 = new Auto();
+
+            auto2 = new Auto(); 
         }
 
         public class MiPrimerClase
