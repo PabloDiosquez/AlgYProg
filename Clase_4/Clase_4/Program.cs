@@ -20,7 +20,14 @@ namespace Clase_4
 
             auto1 = new Auto();
 
-            auto2 = new Auto(); 
+            auto2 = new Auto();
+
+            auto1.SetMarca("Fiat");
+
+            auto2.SetMarca("Peugeot");
+
+            Console.WriteLine(auto1.ImprimirDatos()); 
+            Console.WriteLine(auto2.ImprimirDatos()); 
         }
 
         public class MiPrimerClase
