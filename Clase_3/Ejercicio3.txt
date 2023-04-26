@@ -4,6 +4,8 @@ public class HelloWorld
 {
     public static void Main(string[] args)
     {
+	fechaNac fechaDeNacimiento, fechaActual;
+	
         Console.WriteLine("Día:");
         int dia = int.Parse(Console.ReadLine());
 
@@ -13,9 +15,11 @@ public class HelloWorld
         Console.WriteLine("Año:");
         int año = int.Parse(Console.ReadLine());
         
-       fechaNac fechaDeNacimiento = crearFecha(dia, mes, año);
+        fechaDeNacimiento.crearFecha(dia, mes, año);
 
-       int edad = fechaDeNacimiento.edad(21,4,2023);
+	fechaActual.crearFecha(21,4,2023);
+
+        int edad = fechaDeNacimiento.edad(fechaActual);
        
        Console.WriteLine("Fecha de nacimiento: {0} del {1} de {2}", fechaDeNacimiento.verDia(), fechaDeNacimiento.verMes(), fechaDeNacimiento.verAño());
        
