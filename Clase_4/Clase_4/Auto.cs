@@ -15,13 +15,27 @@ namespace Clase_4
         private double velocidad;
 
         // Constructor
+        public Auto(string marca, int modelo) : this()
+        {
+            this.marca = marca;
+
+            this.modelo = modelo;
+        }
+
+        // Sobrecarga de constructores
+
+        public Auto(string marca, string modelo) : this(marca, int.Parse(modelo))
+        {
+
+        }
+
         public Auto()
         {
-            velocidad =  0;
+            velocidad = 0;
         }
 
         // Métodos Getters y Setters 👌🏼
-        public void SetMarca(string marca) 
+        public void SetMarca(string marca)
         {
             this.marca = marca;
         }

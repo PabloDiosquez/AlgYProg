@@ -18,13 +18,9 @@ namespace Clase_4
 
             Auto auto2;
 
-            auto1 = new Auto();
+            auto1 = new Auto("Fiat", 2000);
 
-            auto2 = new Auto();
-
-            auto1.SetMarca("Fiat");
-
-            auto2.SetMarca("Peugeot");
+            auto2 = new Auto("Peugeot", 2010);
 
             Console.WriteLine(auto1.ImprimirDatos()); 
 
