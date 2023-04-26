@@ -27,7 +27,18 @@ namespace Clase_4
             auto2.SetMarca("Peugeot");
 
             Console.WriteLine(auto1.ImprimirDatos()); 
-            Console.WriteLine(auto2.ImprimirDatos()); 
+
+            Console.WriteLine(auto2.ImprimirDatos());
+
+            // ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪ //
+
+            auto1.Acelerar();
+
+            auto1.Acelerar(12);
+
+            auto1.Acelerar(1.3);
+
+            Console.WriteLine($"Velocidad actual: {auto1.GetVelocidad()} km/h");
         }
 
         public class MiPrimerClase

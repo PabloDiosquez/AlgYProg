@@ -12,10 +12,12 @@ namespace Clase_4
 
         private int modelo;
 
+        private double velocidad;
+
         // Constructor
         public Auto()
         {
-
+            velocidad =  0;
         }
 
         // Métodos Getters y Setters 👌🏼
@@ -39,11 +41,32 @@ namespace Clase_4
             return modelo;
         }
 
+        public double GetVelocidad()
+        {
+            return velocidad;
+        }
+
         // Otros métodos...
 
         public string ImprimirDatos()
         {
             return $"Marca: {marca} -- Modelo: {modelo}";
+        }
+
+        // Sobrecarga de métodos.
+        public void Acelerar()
+        {
+            velocidad += 10;
+        }
+
+        public void Acelerar(int valor)
+        {
+            velocidad += valor;
+        }
+
+        public void Acelerar(double coeficiente) 
+        {
+            velocidad *= coeficiente;   
         }
     }
 }
