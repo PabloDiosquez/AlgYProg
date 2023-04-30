@@ -6,7 +6,9 @@ namespace Consola
     {
         static void Main(string[] args)
         {
-            
+            Duenio duenio1 = new Duenio("Juan", "Díaz");
+
+            duenio1.Mascota = new Mascota("Coco", "Juan", 2, "Mamífero");
         }
     }
 }

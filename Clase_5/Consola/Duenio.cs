@@ -41,5 +41,19 @@ namespace Consola
 
             set { nombre = value; }
         }
+
+        public string Apellido
+        {
+            get { return apellido; }
+
+            set { apellido = value; }
+        }
+
+        public Mascota Mascota 
+        {
+            get { return mascota; }
+
+            set { mascota = value; }
+        }
     }
 }
