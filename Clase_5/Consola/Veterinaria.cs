@@ -46,19 +46,54 @@ namespace Consola
             cantidadDeMascotas++;
         }
 
-        public void atenderMascota(Mascota mascota)
+        public void atenderMascota(string nombre, string nombreDelDuenio, string nuevoDiagnostico)
         {
+            foreach (Mascota mascota in listaDeMascotas)
+            {
+                if (mascota.Nombre == nombre && mascota.NombreDelDueño == nombreDelDuenio)
+                {
+                    mascota.Diagnostico = nuevoDiagnostico;
+
+                    break;
+                }
+            } 
 
         }
 
         public string verDatosDeMascota(int indice)
         {
-            return string.Empty;
+            return listaDeMascotas[indice].verDatosMascota();
+        }
+
+        public bool estaEnLaLista(Mascota mascota, Mascota[] listaDeMascotas)
+        {
+            foreach (Mascota mascota_ in listaDeMascotas)
+            {
+                if (mascota_.Nombre == mascota.Nombre && mascota_.NombreDelDueño == mascota.NombreDelDueño) 
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public string eliminarMascota(Mascota mascota)
         {
-            return string.Empty;
+            if (estaEnLaLista(mascota, listaDeMascotas))
+            {
+                int indice = Array.IndexOf(listaDeMascotas, mascota);
+
+                Mascota mascotaEliminada = listaDeMascotas[indice];
+
+                listaDeMascotas[indice] = null;
+
+                cantidadDeMascotas--;
+
+                return mascotaEliminada.verDatosMascota();
+            }
+
+            return "La mascota a eliminar no estaba en la lista";
         }
 
         public int totalDeMascotas()
