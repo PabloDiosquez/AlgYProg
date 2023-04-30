@@ -73,5 +73,12 @@ namespace Consola
             set { diagnostico = value; }
         }
 
+        // Métodos
+
+        public string verDatosMascota()
+        {
+            return $"Nombre: {nombre} - Dueño: {nombreDelDueño} - Edad: {edad} - Especie: {especie} - Diagnóstico: {diagnostico}";
+        }
+
     }
 }

@@ -28,11 +28,22 @@ namespace Consola
             cantidadDeMascotas = 0;
         }
 
+        // Propiedades 
+
+        public string Nombre
+        {
+            get { return nombre; }
+
+            set { nombre = value; }
+        }
+
         // Métodos
 
-        public void agregarMascota()
+        public void agregarMascota(Mascota mascota)
         {
+            listaDeMascotas[cantidadDeMascotas] = mascota;
 
+            cantidadDeMascotas++;
         }
 
         public void atenderMascota(Mascota mascota)
@@ -52,7 +63,7 @@ namespace Consola
 
         public int totalDeMascotas()
         {
-            return 0;
+            return cantidadDeMascotas;
         }
     }
 }
