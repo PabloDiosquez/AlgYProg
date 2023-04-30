@@ -2,7 +2,7 @@
 
 namespace Consola_Ejercicio_1
 {
-    internal class Consola
+    internal class Ejercicio_1
     {
         static void Main(string[] args)
         {

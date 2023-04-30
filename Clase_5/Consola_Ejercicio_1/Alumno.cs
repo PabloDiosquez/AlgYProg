@@ -50,5 +50,13 @@ namespace Consola_Ejercicio_1
 
         }
 
+        public void VerHorariosDeCursada()
+        {
+            foreach (HorarioDeCursada horario in horariosDeCursadas)
+            {
+                Console.WriteLine(horario.ToString());
+            }
+        }
+
     }
 }
