@@ -27,5 +27,32 @@ namespace Consola
 
             cantidadDeMascotas = 0;
         }
+
+        // Métodos
+
+        public void agregarMascota()
+        {
+
+        }
+
+        public void atenderMascota(Mascota mascota)
+        {
+
+        }
+
+        public string verDatosDeMascota(int indice)
+        {
+            return string.Empty;
+        }
+
+        public string eliminarMascota(Mascota mascota)
+        {
+            return string.Empty;
+        }
+
+        public int totalDeMascotas()
+        {
+            return 0;
+        }
     }
 }
