@@ -37,6 +37,11 @@ namespace Consola
             set { nombre = value; }
         }
 
+        public Mascota[] ListaDeMascotas
+        {
+            get { return listaDeMascotas; }
+        }
+
         // Métodos
 
         public void agregarMascota(Mascota mascota)
@@ -65,7 +70,7 @@ namespace Consola
             return listaDeMascotas[indice].verDatosMascota();
         }
 
-        public bool estaEnLaLista(Mascota mascota, Mascota[] listaDeMascotas)
+        public static bool estaEnLaLista(Mascota mascota, Mascota[] listaDeMascotas)
         {
             foreach (Mascota mascota_ in listaDeMascotas)
             {
@@ -80,7 +85,7 @@ namespace Consola
 
         public string eliminarMascota(Mascota mascota)
         {
-            if (estaEnLaLista(mascota, listaDeMascotas))
+            if (Veterinaria.estaEnLaLista(mascota, listaDeMascotas))
             {
                 int indice = Array.IndexOf(listaDeMascotas, mascota);
 
@@ -93,7 +98,7 @@ namespace Consola
                 return mascotaEliminada.verDatosMascota();
             }
 
-            return "La mascota a eliminar no estaba en la lista";
+            return "La mascota a eliminar no está en la lista";
         }
 
         public int totalDeMascotas()
