@@ -8,13 +8,13 @@ namespace Consola_Ejercicio_1
 {
     public class HorarioDeCursada
     {
-        private int dia;
+        private string dia;
 
         private int hora;
 
         private string materia;
 
-        public HorarioDeCursada(int dia, int hora, string materia)
+        public HorarioDeCursada(string dia, int hora, string materia)
         {
             this.dia = dia;
 
@@ -23,7 +23,7 @@ namespace Consola_Ejercicio_1
             this.materia = materia; 
         }
 
-        public int Dia 
+        public string Dia 
         {
             get { return dia; }
 
