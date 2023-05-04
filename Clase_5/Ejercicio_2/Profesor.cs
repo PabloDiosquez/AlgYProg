@@ -33,5 +33,10 @@ namespace Ejercicio_2
             listaDeMateriasQueDicta.Add(materia);
         }
 
+        public string verDatos()
+        {
+            return $"Id: {id} - Nombre: {nombre} - Apellido: {apellido}";
+        }
+
     }
 }

@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_2", "Ejercicio_2\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pilas y Colas", "Pilas y Colas", "{CC3BC2D0-923D-469B-A16D-01AAC5397F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{3F64EF68-4730-422C-96CF-2995FA2BAF87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{3F64EF68-4730-422C-96CF-2995FA2BAF87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_3", "Ejercicio_3\Ejercicio_3.csproj", "{6715740D-187A-4DC6-949A-B27FAC86F15A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{3F64EF68-4730-422C-96CF-2995FA2BAF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F64EF68-4730-422C-96CF-2995FA2BAF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F64EF68-4730-422C-96CF-2995FA2BAF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9883FD95-D931-457A-859F-00FD45B6B3FE} = {19295234-8A33-406D-817F-0887A2449554}
 		{0DE9B2AE-00C2-4AC7-9265-02490953CBCA} = {19295234-8A33-406D-817F-0887A2449554}
+		{3F64EF68-4730-422C-96CF-2995FA2BAF87} = {CC3BC2D0-923D-469B-A16D-01AAC5397F73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C38AD1DD-E671-4547-8E3A-86A8EB1EACF3}

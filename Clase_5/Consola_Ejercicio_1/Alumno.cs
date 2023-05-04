@@ -93,13 +93,17 @@ namespace Consola_Ejercicio_1
 
         }
 
-
         public void VerHorariosDeCursada()
         {
             foreach (HorarioDeCursada horario in horariosDeCursadas)
             {
                 Console.WriteLine(horario.ToString());
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Legajo: {legajo} - Nombre: {nombre} - Apellido: {apellido}";
         }
 
     }
