@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Consola_Ejercicio_1\Consola_Ejercicio_1.csproj" />
+    <ProjectReference Include="..\Ejercicio_2\Ejercicio_2.csproj" />
+  </ItemGroup>
+
 </Project>
