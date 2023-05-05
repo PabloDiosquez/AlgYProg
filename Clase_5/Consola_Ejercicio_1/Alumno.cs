@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Consola_Ejercicio_1
+namespace Ejercicio_1
 {
     public class Alumno
     {

@@ -47,9 +47,9 @@ namespace Ejercicio_5
             get { return tramite; }
         }
 
-        public string FechaDePresentacion
+        public DateTime FechaDePresentacion
         {
-            get { return $"{fechaDePresentacion.Day}/{fechaDePresentacion.Month}/{fechaDePresentacion.Year}"; }
+            get { return fechaDePresentacion; }
         }
     }
 }

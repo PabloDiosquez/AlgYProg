@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Consola_Ejercicio_1
+namespace Ejercicio_1
 {
     internal class Ejercicio_1
     {

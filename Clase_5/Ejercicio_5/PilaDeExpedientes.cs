@@ -18,11 +18,9 @@ namespace Ejercicio_5
 
         // Métodos
 
-        public void ApilarExpediente(int numero, string titular, string tramite, DateTime fechaDePresentacion)
+        public void ApilarExpediente(Expediente expediente)
         {
-            Expediente nuevoExpediente = new Expediente(numero, titular, tramite, fechaDePresentacion);
-
-            expedientes.Add(nuevoExpediente);
+            expedientes.Add(expediente);
         }
 
         public Expediente DesapilarExpediente()

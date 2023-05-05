@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Consola_Ejercicio_1;
+using Ejercicio_1;
 using Ejercicio_2;
 using System.Collections;
 
