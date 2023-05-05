@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pilas y Colas", "Pilas y Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{3F64EF68-4730-422C-96CF-2995FA2BAF87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_3", "Ejercicio_3\Ejercicio_3.csproj", "{6715740D-187A-4DC6-949A-B27FAC86F15A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_3", "Ejercicio_3\Ejercicio_3.csproj", "{6715740D-187A-4DC6-949A-B27FAC86F15A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_5", "Ejercicio_5\Ejercicio_5.csproj", "{90D583F1-F538-41FC-AEE3-2CC225EF085F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6715740D-187A-4DC6-949A-B27FAC86F15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D583F1-F538-41FC-AEE3-2CC225EF085F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D583F1-F538-41FC-AEE3-2CC225EF085F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D583F1-F538-41FC-AEE3-2CC225EF085F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D583F1-F538-41FC-AEE3-2CC225EF085F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
