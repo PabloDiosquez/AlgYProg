@@ -11,18 +11,39 @@ namespace Ejercicio_5
     {
         private ArrayList expedientes;
 
-        public PilaDeExpedientes() 
+        public PilaDeExpedientes()
         {
             expedientes = new ArrayList();
         }
 
         // Métodos
 
-        public void ApilarExpediente(int numero, string titular, string tramite, DateTime fechaDePresentacion) 
+        public void ApilarExpediente(int numero, string titular, string tramite, DateTime fechaDePresentacion)
         {
             Expediente nuevoExpediente = new Expediente(numero, titular, tramite, fechaDePresentacion);
 
-            expedientes.Add(nuevoExpediente);   
+            expedientes.Add(nuevoExpediente);
+        }
+
+        public Expediente DesapilarExpediente()
+        {
+            int ultimaPosicion = expedientes.Count - 1;
+
+            Expediente expediente = (Expediente)expedientes[ultimaPosicion];
+
+            expedientes.Remove(expediente);
+
+            return expediente;
+        }
+
+        public bool estaVacia()
+        {
+            return expedientes.Count == 0;
+        }
+
+        public Expediente VerTope()
+        {
+            return (Expediente)expedientes[0];
         }
     }
 }
