@@ -106,11 +106,13 @@ namespace Ejercicio_5
         }
 
         /// <summary>
+        /// Muestra los datos de los expedientes de **titular** en el mes de **mes** de la lista de expedientes dada.
         /// 
+        /// Precondición: **titular** debe tener expedientes en el mes de **mes** en la lista de expedientes actual.
         /// </summary>
-        /// <param name="titular"></param>
-        /// <param name="mes"></param>
-        /// <param name="expedientes"></param>
+        /// <param name="titular">Nombre del titular de los expedientes cuyos datos se deben mostrar</param>
+        /// <param name="mes">Número del mes</param>
+        /// <param name="expedientes">Lista de expedientes actual</param>
         public static void MostrarDatosDeExpedientesDe_EnElMesDe_EnLaPila_(string titular, int mes, PilaDeExpedientes expedientes)
         {
             Expediente expediente;
