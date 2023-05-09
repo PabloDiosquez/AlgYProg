@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Ejercicio_5
 {
     /// <summary>
-    /// Expediente ➡ Cada expediente cuenta con un número, un titular, un trámite y una fecha de presentación.
+    /// Representa un expediente. Cada expediente cuenta con un número, un titular, un trámite y una fecha de presentación.
     /// </summary>
     public class Expediente
     {
