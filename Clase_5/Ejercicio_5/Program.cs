@@ -6,6 +6,8 @@ namespace Ejercicio_5
     {
         static void Main(string[] args)
         {
+            //CONSIGNA:
+
             //Implemente la clase Pila de expedientes(usando la interfaz vista en la teoría). Luego resuelva el siguiente
             //problema: En una oficina un abogado debe clasificar una pila de expedientes.Cada expediente cuenta con
             //un número, titular, trámite y fecha de presentación. Se desea:
@@ -33,6 +35,12 @@ namespace Ejercicio_5
 
         }
 
+        /// <summary>
+        /// Muestra la pila de expedientes correspondiente al mes número **mes**.
+        /// </summary>
+        /// <param name="expedientes">Pila de expedientes ➡ Tipo: PilaDeExpedientes</param>
+        /// <param name="mes">Número del mes ➡ Tipo: int</param>
+        /// <returns>PilaDeExpedientes</returns>
         public static PilaDeExpedientes verPilaDeExpedientesDelMes_(PilaDeExpedientes expedientes, int mes) 
         {
             PilaDeExpedientes pilaNueva = new PilaDeExpedientes();
