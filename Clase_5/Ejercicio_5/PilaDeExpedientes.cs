@@ -70,6 +70,15 @@ namespace Ejercicio_5
             return (Expediente)expedientes[0];
         }
 
-        
+        /// <summary>
+        /// Muestra los datos de los expedientes apilados en la lista actual de expedientes.
+        /// </summary>
+        public void MostrarDatosDeLosExpedientesEnLaPila()
+        {
+            foreach (Expediente expediente in this.expedientes)
+            {
+                Console.WriteLine(expediente.ToString());
+            }
+        }
     }
 }

@@ -18,9 +18,22 @@ namespace Ejercicio_5
 
             PilaDeExpedientes expedientes = new PilaDeExpedientes();
 
-            // ...
+            // Carga expedientes en la pila...
 
-            // Idea...
+            // a) 
+
+            // Llamada al método estático ApilarExpedientesDelMes_(PilaDeExpedientes expedientes, int mes) 
+            // Mes 2 ➡ Febrero.
+
+            PilaDeExpedientes pilaDelMesDeFebrero = ApilarExpedientesDelMes_(expedientes, 2);
+
+            // Mostrar los datos de los expedientes filtrados por mes de Febrero.
+
+            pilaDelMesDeFebrero.MostrarDatosDeLosExpedientesEnLaPila();
+
+            // ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
+
+            // b) 
 
             while (!expedientes.estaVacia())
             {
@@ -35,13 +48,15 @@ namespace Ejercicio_5
 
         }
 
+        // 🔹 Funciones auxiliares 
+
         /// <summary>
-        /// Muestra la pila de expedientes correspondiente al mes número **mes**.
+        /// Apila expedientes correspondiente al mes número **mes**, de un pila de expedientes dada.
         /// </summary>
         /// <param name="expedientes">Pila de expedientes ➡ Tipo: PilaDeExpedientes</param>
         /// <param name="mes">Número del mes ➡ Tipo: int</param>
         /// <returns>PilaDeExpedientes</returns>
-        public static PilaDeExpedientes verPilaDeExpedientesDelMes_(PilaDeExpedientes expedientes, int mes) 
+        public static PilaDeExpedientes ApilarExpedientesDelMes_(PilaDeExpedientes expedientes, int mes) 
         {
             PilaDeExpedientes pilaNueva = new PilaDeExpedientes();
 
