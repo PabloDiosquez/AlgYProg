@@ -44,23 +44,13 @@ namespace Ejercicio_5
             if (tiene_UnExpedienteEnElMes_EnLaPila_(nombreABuscar, mesABuscar, expedientes))
             {
                 Console.WriteLine("Si! {0} tuvo una audiencia en el mes {1}", nombreABuscar, mesABuscar);
+
+                MostrarDatosDeExpedientesDe_EnElMesDe_EnLaPila_(nombreABuscar, mesABuscar, expedientes);
             }
             else 
             {
                 Console.WriteLine("NO! {0} no tuvo una audiencia en el mes {1}", nombreABuscar, mesABuscar);
             }
-
-
-            while (!expedientes.estaVacia())
-            {
-                Expediente expediente = expedientes.DesapilarExpediente();
-
-                if (expediente.Titular == "Gabriela Turco" && expediente.FechaDePresentacion.Month == 3)
-                {
-                    Console.WriteLine(expediente.ToString());
-                }
-            }
-
 
         }
 
@@ -113,6 +103,27 @@ namespace Ejercicio_5
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="titular"></param>
+        /// <param name="mes"></param>
+        /// <param name="expedientes"></param>
+        public static void MostrarDatosDeExpedientesDe_EnElMesDe_EnLaPila_(string titular, int mes, PilaDeExpedientes expedientes)
+        {
+            Expediente expediente;
+
+            while (!expedientes.estaVacia())
+            {
+                expediente = expedientes.DesapilarExpediente();
+
+                if (expediente.Titular == titular && expediente.FechaDePresentacion.Month == mes) 
+                {
+                    Console.WriteLine(expediente.ToString());
+                }
+            } 
         }
     }
 }
