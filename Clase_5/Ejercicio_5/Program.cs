@@ -33,7 +33,23 @@ namespace Ejercicio_5
 
             // ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 
-            // b) 
+            // b)
+
+            // ¿Tuvo la señora Gabriela Turco una audiencia en el mes de Marzo?
+
+            string nombreABuscar = "Gabriela Turco";
+
+            int mesABuscar = 3;
+
+            if (tiene_UnExpedienteEnElMes_EnLaPila_(nombreABuscar, mesABuscar, expedientes))
+            {
+                Console.WriteLine("Si! {0} tuvo una audiencia en el mes {1}", nombreABuscar, mesABuscar);
+            }
+            else 
+            {
+                Console.WriteLine("NO! {0} no tuvo una audiencia en el mes {1}", nombreABuscar, mesABuscar);
+            }
+
 
             while (!expedientes.estaVacia())
             {
@@ -73,6 +89,30 @@ namespace Ejercicio_5
             }
 
             return pilaNueva;
+        }
+
+        /// <summary>
+        /// Indica si **nombre** es titular de algún expediente de la pila actual de expedientes en el mes dado.
+        /// </summary>
+        /// <param name="nombre">Nombre de la persona según la cual se describe el valor de retorno</param>
+        /// <param name="mes">Número del mes</param>
+        /// <param name="expedientes">Pila de expedientes actual</param>
+        /// <returns>Booleano</returns>
+        public static bool tiene_UnExpedienteEnElMes_EnLaPila_(string nombre, int mes, PilaDeExpedientes expedientes)
+        {
+            Expediente expediente;
+
+            while (!expedientes.estaVacia()) 
+            {
+                expediente=expedientes.DesapilarExpediente();
+
+                if (expediente.Titular == nombre && expediente.FechaDePresentacion.Month == mes)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
