@@ -67,10 +67,6 @@ namespace Ejercicio_4
             set { precio = value; }
         }
 
-        //el método venderEntrada(Espectador unEsp) que le asigna una butaca libre al
-        //espectador y modifica la información correspondiente a la obra de teatro(cantidad de butacas libres y
-        //la ocupación de la butaca). 
-
         /// <summary>
         /// Indica si al espectador dado se le puede vender una entrada; si es así, asigna una butaca libre al espectador
         /// **espectador** y modifica la información correspondiente a la obra de teatro (cantidad de bustacas libres y la ocupación de una butaca).

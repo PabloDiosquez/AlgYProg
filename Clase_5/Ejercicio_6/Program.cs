@@ -16,6 +16,11 @@ namespace Ejercicio_6
             //También deberá permitir atender a un cliente ingresando por consola la letra A seguida del número de
             //servicio.El sistema deberá mostrar en consola el número que se está llamando.
 
+            ColaDeClientes servicioA = new ColaDeClientes();
+
+            ColaDeClientes servicioB = new ColaDeClientes();
+
+            ColaDeClientes servicioC = new ColaDeClientes();
 
 
 
