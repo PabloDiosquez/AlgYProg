@@ -11,14 +11,20 @@ namespace Ejercicio_6
     {
         private ArrayList clientes;
 
+        private int numeroClientes;
+
         public ColaDeClientes()
         {
             clientes = new ArrayList();
+
+            numeroClientes = 0;
         }
 
         public void Encolar(Cliente cliente) 
         {
             clientes.Add(cliente);
+
+            numeroClientes++;
         }
 
         public Cliente Desencolar()

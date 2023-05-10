@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_6
 {
-    internal class Cliente
+    public class Cliente
     {
+        private int numeroCliente;
+
+        public Cliente(int numeroCliente)
+        {
+            this.numeroCliente = numeroCliente; 
+        }
     }
 }
