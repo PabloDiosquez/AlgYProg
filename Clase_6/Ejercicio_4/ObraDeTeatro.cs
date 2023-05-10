@@ -17,13 +17,34 @@ namespace Ejercicio_4
 
         private double precio;
 
+        private Butaca[] butacas; 
+
+        private int numeroDeButacasLibres;
+
         // Constructor
 
         public ObraDeTeatro(Espectaculo espectaculo, string titulo, double precio): base(espectaculo.Sala, espectaculo.Capacidad)
         {
             this.titulo = titulo;
 
-            this.precio = precio;   
+            this.precio = precio;
+
+            butacas = new Butaca[espectaculo.Capacidad];
+
+            VaciarButacas();
+
+            numeroDeButacasLibres = espectaculo.Capacidad;
+        }
+
+        /// <summary>
+        /// Vacía todas las butacas de la obra para comenzar la venta de entradas.
+        /// </summary>
+        private void VaciarButacas() 
+        {
+            foreach (Butaca butaca in butacas)
+            {
+                butaca.EstaLibre = true;
+            }
         }
 
         // Getters y Setters
@@ -45,5 +66,32 @@ namespace Ejercicio_4
 
             set { precio = value; }
         }
+
+        //el método venderEntrada(Espectador unEsp) que le asigna una butaca libre al
+        //espectador y modifica la información correspondiente a la obra de teatro(cantidad de butacas libres y
+        //la ocupación de la butaca). 
+
+        /// <summary>
+        /// Indica si al espectador dado se le puede vender una entrada; si es así, asigna una butaca libre al espectador
+        /// **espectador** y modifica la información correspondiente a la obra de teatro (cantidad de bustacas libres y la ocupación de una butaca).
+        /// </summary>
+        /// <param name="espectador">Es el espectador al cual se le vende una entrada ➡ Espectador</param>
+        public bool venderEntrada(Espectador espectador)
+        {
+            foreach (Butaca butaca in butacas)
+            {
+                if (butaca.EstaLibre)
+                {
+                    espectador.Butaca = butaca;
+
+                    numeroDeButacasLibres--;
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }
