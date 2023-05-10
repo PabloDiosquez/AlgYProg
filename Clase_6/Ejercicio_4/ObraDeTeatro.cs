@@ -17,13 +17,13 @@ namespace Ejercicio_4
 
         private double precio;
 
-        private Butaca[] butacas; 
+        private Butaca[] butacas;
 
         private int numeroDeButacasLibres;
 
         // Constructor
 
-        public ObraDeTeatro(Espectaculo espectaculo, string titulo, double precio): base(espectaculo.Sala, espectaculo.Capacidad)
+        public ObraDeTeatro(Espectaculo espectaculo, string titulo, double precio) : base(espectaculo.Sala, espectaculo.Capacidad)
         {
             this.titulo = titulo;
 
@@ -39,7 +39,7 @@ namespace Ejercicio_4
         /// <summary>
         /// Vacía todas las butacas de la obra para comenzar la venta de entradas.
         /// </summary>
-        private void VaciarButacas() 
+        private void VaciarButacas()
         {
             foreach (Butaca butaca in butacas)
             {
@@ -52,7 +52,7 @@ namespace Ejercicio_4
         /// <summary>
         /// Describe el título de la obra de teatro.
         /// </summary>
-        public string Titulo 
+        public string Titulo
         {
             get { return titulo; }
         }
@@ -60,7 +60,7 @@ namespace Ejercicio_4
         /// <summary>
         /// Describe el precio de la obra de teatro. Además, permite asignar dicho precio.
         /// </summary>
-        public double Precio 
+        public double Precio
         {
             get { return precio; }
 

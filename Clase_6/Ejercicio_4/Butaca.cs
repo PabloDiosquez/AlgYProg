@@ -27,7 +27,7 @@ namespace Ejercicio_4
         /// Describe el número asignado a la butaca.
         /// Tipo: int
         /// </summary>
-        public int NumeroDeButaca 
+        public int NumeroDeButaca
         {
             get { return numero; }
         }
@@ -35,7 +35,7 @@ namespace Ejercicio_4
         /// <summary>
         /// Indica si la butaca está libre. Además, permite cambiar el estado de la butaca para indicar si ésta fue ocupada.
         /// </summary>
-        public bool EstaLibre 
+        public bool EstaLibre
         {
             get { return estaLibre; }
 

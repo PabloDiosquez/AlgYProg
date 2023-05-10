@@ -25,9 +25,9 @@ namespace Ejercicio_4
 
         public Espectador(string nombre, string apellido, int dni, Butaca butaca)
         {
-            this.nombre = nombre; 
+            this.nombre = nombre;
 
-            this.apellido = apellido;   
+            this.apellido = apellido;
 
             this.dni = dni;
 
@@ -36,14 +36,14 @@ namespace Ejercicio_4
 
         // Getters y Setters
 
-        public string Nombre 
+        public string Nombre
         {
             get { return nombre; }
 
             set { nombre = value; }
         }
 
-        public string Apellido 
+        public string Apellido
         {
             get { return apellido; }
 
@@ -57,7 +57,7 @@ namespace Ejercicio_4
             set { dni = value; }
         }
 
-        public Butaca Butaca 
+        public Butaca Butaca
         {
             get { return butaca; }
 

@@ -4,7 +4,7 @@ namespace Ejercicio_2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Cree una jerarquía de clases como la que se indica en el esquema y defina en todas ellas el
             //método polimórfico ToString() que escribe en la consola la jerarquía desde la claseA hasta aquella

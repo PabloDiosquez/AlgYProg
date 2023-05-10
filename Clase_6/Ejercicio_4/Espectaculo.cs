@@ -38,7 +38,7 @@ namespace Ejercicio_4
         /// <summary>
         /// Describe la cantidad de butacas que definen la capacidad de la sala.
         /// </summary>
-        public int Capacidad 
+        public int Capacidad
         {
             get { return capacidad; }
         }
