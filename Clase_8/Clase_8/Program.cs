@@ -7,7 +7,7 @@ namespace Clase_8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(fibonacciV1(8));
+            Console.WriteLine(cantidadDeVocales("educacionaaaaaaaaaa"));
         }
 
         // 🔸 Ejercicios.
@@ -51,17 +51,29 @@ namespace Clase_8
         //3) Modifique la función anterior para, que en vez de imprimir por consola, devuelva la serie
         //en un ArrayList.
 
-        public static ArrayList fibonacciV2(int numero) 
+
+        //5) Escriba una función recursiva que reciba un string y retorne la cantidad de vocales que
+        //contiene.
+
+        public static int unoSiEsVocalCeroSino(string letra)
         {
-            ArrayList fibo = new ArrayList();
+            if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u")
+            {
+                return 1;
+            }
 
-
-
-            return fibo;
+            return 0;
         }
 
+        public static int cantidadDeVocales(string palabra)
+        {
+            if (palabra == string.Empty)
+                return 0;
 
+            string ultimaLetra = palabra.Substring(palabra.Length - 1);
 
+            return cantidadDeVocales(palabra.Remove(palabra.Length - 1)) + unoSiEsVocalCeroSino(ultimaLetra);
+        }
 
 
     }
