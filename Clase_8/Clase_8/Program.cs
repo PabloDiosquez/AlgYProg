@@ -25,7 +25,7 @@ namespace Clase_8
 
         // 🔸 Ejercicios.
 
-        //1) Implemente una función recursiva que calcule el factorial de un número n, el cual es
+        //1️⃣ Implemente una función recursiva que calcule el factorial de un número n, el cual es
         //pasado por parámetro.
 
         public static int factorial(int numero)
@@ -35,6 +35,8 @@ namespace Clase_8
 
             return factorial(numero - 1)*numero;
         }
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
         //2) Implemente una función recursiva que imprima por consola la secuencia de Fibonacci hasta
         //un número pasado por parámetro.La secuencia de Fibonacci se genera sumando dos
@@ -61,9 +63,13 @@ namespace Clase_8
             return fibonacciV1(numero - 1) + $", {fibo(numero)}";
         }
 
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
+
         //3) Modifique la función anterior para, que en vez de imprimir por consola, devuelva la serie
         //en un ArrayList.
 
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
         //5) Escriba una función recursiva que reciba un string y retorne la cantidad de vocales que
         //contiene.
@@ -87,6 +93,14 @@ namespace Clase_8
 
             return cantidadDeVocales(palabra.Remove(palabra.Length - 1)) + unoSiEsVocalCeroSino(ultimaLetra);
         }
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
+
+        //7) Escriba una función recursiva que reciba un string como parámetro y devuelva si es o
+        //no palíndromo.
+
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
         //9) Escriba una función recursiva que reciba un número y un arreglo de números y retorne
         //la cantidad de veces que dicho número aparece en el arreglo.
