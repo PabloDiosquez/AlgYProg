@@ -7,20 +7,7 @@ namespace Clase_8
     {
         static void Main(string[] args)
         {
-            ArrayList numeros = new ArrayList();
-
-            numeros.Add(2);
-            numeros.Add(2);
-            numeros.Add(2);
-            numeros.Add(3);
-            numeros.Add(2);
-            numeros.Add(2);
-            numeros.Add(4);
-            numeros.Add(23);
-
-            int ultimoElemento = (int)numeros[numeros.Count - 1];
-
-            Console.WriteLine(cantidadDeVecesQueAparece_EnElArreglo_(2,numeros));
+            Console.WriteLine(esPalindromo("anitalavalatina"));
         }
 
         // 🔸 Ejercicios.
@@ -99,6 +86,18 @@ namespace Clase_8
         //7) Escriba una función recursiva que reciba un string como parámetro y devuelva si es o
         //no palíndromo.
 
+        public static bool esPalindromoDesde_(string str, int indice)
+        {
+            if (indice > str.Length/2)
+                return true;
+
+            return esPalindromoDesde_(str, indice + 1) && str[str.Length - indice - 1] == str[indice];
+        }
+
+        public static bool esPalindromo(string str)
+        {
+            return esPalindromoDesde_(str,0);
+        }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
