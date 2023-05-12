@@ -7,7 +7,20 @@ namespace Clase_8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(cantidadDeVocales("educacionaaaaaaaaaa"));
+            ArrayList numeros = new ArrayList();
+
+            numeros.Add(2);
+            numeros.Add(2);
+            numeros.Add(2);
+            numeros.Add(3);
+            numeros.Add(2);
+            numeros.Add(2);
+            numeros.Add(4);
+            numeros.Add(23);
+
+            int ultimoElemento = (int)numeros[numeros.Count - 1];
+
+            Console.WriteLine(cantidadDeVecesQueAparece_EnElArreglo_(2,numeros));
         }
 
         // 🔸 Ejercicios.
@@ -75,6 +88,47 @@ namespace Clase_8
             return cantidadDeVocales(palabra.Remove(palabra.Length - 1)) + unoSiEsVocalCeroSino(ultimaLetra);
         }
 
+        //9) Escriba una función recursiva que reciba un número y un arreglo de números y retorne
+        //la cantidad de veces que dicho número aparece en el arreglo.
 
+        /// <summary>
+        /// Describe uno si se cumple la condición dada; describe cero en caso de no cumplirse.
+        /// </summary>
+        /// <param name="condicion">Booleano</param>
+        /// <returns></returns>
+        public static int unoSi_CeroSino(bool condicion)
+        {
+            if (condicion)
+                return 1;
+
+            return 0;
+        }
+
+        public static bool elNro_EstaEnElArreglo(int numero, ArrayList numeros)
+        {
+            if (numeros.Count == 0)
+                return false;
+
+            else if((int)numeros[numeros.Count - 1] == numero)
+                return true;
+
+            numeros.RemoveAt(numeros.Count - 1);
+
+            return elNro_EstaEnElArreglo(numero, numeros);
+        }
+
+        public static int cantidadDeVecesQueAparece_EnElArreglo_(int numero, ArrayList numeros)
+        {
+            if (numeros.Count == 0)
+                return 0;
+
+            int ultimoElemento = (int)numeros[numeros.Count-1];
+
+            int totalParcial = unoSi_CeroSino(elNro_EstaEnElArreglo(numero, numeros));
+
+            numeros.Remove(ultimoElemento);
+
+            return cantidadDeVecesQueAparece_EnElArreglo_(numero, numeros) + totalParcial;
+        }
     }
 }
