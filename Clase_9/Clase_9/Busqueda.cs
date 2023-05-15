@@ -8,10 +8,12 @@ namespace Clase_9
 {
     public static class Busqueda
     {
-        /// <summary>
-        /// La búsqueda secuencial busca un elemento de una colección utilizando un valor destino llamado clave.
+        ///La búsqueda secuencial busca un elemento de una colección utilizando un valor destino llamado clave.
         /// En una búsqueda secuencial(a veces llamada búsqueda lineal), los elementos de una lista o vector se
         /// exploran (se examinan) en secuencia, uno después de otro.
+
+        /// <summary>
+        /// Indica si **clave** está en el arreglo dado.
         /// </summary>
         /// <param name="numeros">Array de números enteros</param>
         /// <param name="key">Valor destino</param>
@@ -27,12 +29,15 @@ namespace Clase_9
             return false;
         }
 
-        /// <summary>
+
         /// Si la colección en donde buscar se encuentra ordenada entonces es posible utilizar la búsqueda binaria
         /// que permite encontrar un elemento de forma más rápida que la secuencial.
         /// Se sitúa la lectura en el centro de la colección y se comprueba si la clave coincide con el valor del
         /// elementocentral.Si no se encuentra el valor de la clave, se sigue la búsqueda en la mitad inferior o 
         /// superior del elemento central de la colección.
+
+        /// <summary>
+        /// Indica si **clave** está en el arreglo dado.
         /// </summary>
         /// <param name="numeros">Array de números enteros</param>
         /// <param name="clave">Valor destino</param>
