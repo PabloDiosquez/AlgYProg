@@ -6,7 +6,7 @@ namespace Clase_9
     {
         static void Main(string[] args)
         {
-           
+
         }
     }
 }

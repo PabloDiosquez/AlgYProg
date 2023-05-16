@@ -78,9 +78,9 @@ namespace Clase_9
                 {
                     int swap = numeros[indiceMinimo];
 
-                    numeros[indiceMinimo] = numeros[j];
+                    numeros[indiceMinimo] = numeros[i];
 
-                    numeros[j] = swap;
+                    numeros[i] = swap;
                 }
             }
         }
@@ -118,13 +118,36 @@ namespace Clase_9
 
         //El algoritmo tiene una mejora, el proceso de ordenamiento puede terminar antes de las n-1 pasadas.
 
-        //• Si en una pasada no se produce intercambio alguno entre elementos a ordenar es porque ya está ordenado,
+        //Si en una pasada no se produce intercambio alguno entre elementos a ordenar es porque ya está ordenado,
         //entonces no son necesarias más pasadas.
 
         public static void OrdenarPorBurbujeoDeMenorAMayorV2(int[] numeros) 
         {
+            int i = 0;
 
+            bool ordenado;
+
+            do
+            {
+                ordenado = true;
+
+                for (int j = i+1; j < numeros.Length; j++)
+                {
+                    if (numeros[i] > numeros[j])
+                    {
+                        int swap = numeros[i];
+
+                        numeros[i] = numeros[j];
+
+                        numeros[j] = swap;
+
+                        ordenado = false;
+                    }
+                }
+
+                i++;
+
+            } while (i < numeros.Length-1 && !ordenado);
         } 
-
     }
 }
