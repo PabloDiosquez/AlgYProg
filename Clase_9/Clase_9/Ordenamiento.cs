@@ -83,7 +83,48 @@ namespace Clase_9
                     numeros[j] = swap;
                 }
             }
-
         }
+
+        // 🔹 Ordenamiento por Burbuja
+
+        //En el caso de una colección con n elementos, el ordenamiento por burbuja requiere hasta n − 1 pasadas.
+
+        //Por cada pasada se comparan elementos adyacentes y se intercambian sus valores cuando el primer elemento
+        //es mayor que el segundo elemento.
+
+        //Al final de cada pasada, el elemento mayor ha «burbujeado» hasta la cima de la subcolección actual.
+
+        /// <summary>
+        /// Ordena el array de números dado de menor a mayor.
+        /// </summary>
+        /// <param name="numeros">Array de números ➡ int[]</param>
+        public static void OrdenarPorBurbujeoDeMenorAMayor(int[] numeros)
+        {
+            for (int i = 0; i < numeros.Length - 1; i++)
+            {
+                for (int j = i+1; j < numeros.Length; j++)
+                {
+                    if (numeros[i] > numeros[j])
+                    {
+                        int swap = numeros[i];
+
+                        numeros[i] = numeros[j];
+
+                        numeros[j] = swap;
+                    }
+                }
+            }
+        }
+
+        //El algoritmo tiene una mejora, el proceso de ordenamiento puede terminar antes de las n-1 pasadas.
+
+        //• Si en una pasada no se produce intercambio alguno entre elementos a ordenar es porque ya está ordenado,
+        //entonces no son necesarias más pasadas.
+
+        public static void OrdenarPorBurbujeoDeMenorAMayorV2(int[] numeros) 
+        {
+
+        } 
+
     }
 }
