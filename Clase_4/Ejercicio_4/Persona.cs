@@ -30,18 +30,41 @@ namespace Ejercicios_4_5_6
 
             dni = int.Parse(vectorDeDatos[1]);
 
-            edad = int.Parse(vectorDeDatos[2]);
+            edad = calcularEdad(vectorDeDatos[2]);
         }
 
-        public Persona(string nombre, DateTime fechaDeNacimiento, int dni)
+        /// <summary>
+        /// Describe la edad de una persona.
+        /// </summary>
+        /// <param name="datosEdad">String</param>
+        /// <returns>int</returns>
+        private int calcularEdad(string datosEdad)
         {
-            this.nombre = nombre;   
+            int edad;
 
-            this.fechaDeNacimiento = fechaDeNacimiento;
+            if (!datosEdad.Contains("/"))
+            {
+                edad = int.Parse(datosEdad);
+            }
+            else 
+            {
+                string[] fechaDeNacimiento = datosEdad.Split("/");
 
-            this.dni = dni;
+                int dia, mes, anio;
 
-            edad = DateTime.Now.Year - fechaDeNacimiento.Year;
+                dia = int.Parse(fechaDeNacimiento[0]);
+
+                mes = int.Parse(fechaDeNacimiento[1]);
+
+                anio = int.Parse(fechaDeNacimiento[2]);
+
+                DateTime fechaDeNacimiento_ = new DateTime(anio, mes, dia);
+
+                edad = DateTime.Now.Year - fechaDeNacimiento_.Year;
+            }
+
+
+            return edad;
         }
 
         /// <summary>

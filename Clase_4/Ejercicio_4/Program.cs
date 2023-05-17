@@ -7,20 +7,22 @@ namespace Ejercicios_4_5_6
     {
         static void Main(string[] args)
         {
-            ArrayList personas = new ArrayList();   
+            ArrayList personas = new ArrayList();
 
-            string datos;
+            string datosPersona;
 
             int indice = 1;
 
             while (true)
             {
-                if (datosIngresados() == string.Empty)
+                datosPersona = datosIngresados();
+
+                if (datosPersona == string.Empty)
                 {
                     break;
                 }
 
-                personas.Add(new Persona(datosIngresados()));
+                personas.Add(new Persona(datosPersona));
             }
 
             foreach (Persona persona in personas)
