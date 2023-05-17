@@ -10,9 +10,9 @@ namespace Ejercicio_2
 
             Hora h2 = new Hora("23:15:30");
 
-            h1.imprimir();
+            h1.imprimirHora();
 
-            h2.imprimir();
+            h2.imprimirHora();
         }
     }
 }

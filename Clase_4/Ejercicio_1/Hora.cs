@@ -34,7 +34,7 @@ namespace Ejercicio_1
         }
 
         /// <summary>
-        /// Describe los valores de horas, minutos y segundos de una instancia de Hora. 
+        /// Describe los valores de horas, minutos y segundos de una hora del día. 
         /// Tipo: string.
         /// </summary>
         public void imprimirHora()

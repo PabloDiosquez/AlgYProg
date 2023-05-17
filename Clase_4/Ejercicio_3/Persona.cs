@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_3
 {
-    internal class Persona
+    /// <summary>
+    /// Modela una persona.
+    /// Una persona tiene un DNI, un nombre y una edad.
+    /// </summary>
+    public class Persona
     {
+        // Atributos 
+
         private int dni;
 
         private string nombre;
 
         private int edad;
 
+        // Constructor
         public Persona(int dni, string nombre, int edad) 
         {
             this.dni = dni; 
@@ -23,6 +30,7 @@ namespace Ejercicio_3
             this.edad = edad;   
         }
 
+        // Getters y Setters
         public int Dni
         {
             get { return dni; }
