@@ -30,7 +30,12 @@ namespace Ejercicio_3
             this.edad = edad;   
         }
 
-        // Getters y Setters
+        // Propiedades
+
+        /// <summary>
+        /// Describe y asigna el DNI de una persona.
+        /// Tipo: int
+        /// </summary>
         public int Dni
         {
             get { return dni; }
@@ -38,6 +43,10 @@ namespace Ejercicio_3
             set { dni = value; }
         }
 
+        /// <summary>
+        /// Describe y asigna el nombre de una persona.
+        /// Tipo: string
+        /// </summary>
         public string Nombre 
         {
             get { return nombre; }
@@ -45,6 +54,10 @@ namespace Ejercicio_3
             set { nombre = value; }
         }
 
+        /// <summary>
+        /// Describe y asigna la edad de una persona.
+        /// Tipo: int
+        /// </summary>
         public int Edad 
         {
             get { return edad; }
