@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_7
 {
-    internal class Operacion
+    /// <summary>
+    /// Modela una operación matemática binaria, la cual consta de dos operandos y un operador.
+    /// </summary>
+    public class Operacion
     {
+        // Atributos
+
         private double operando1;
 
         private double operando2;
 
         private string operador;
 
+        // Constructor
         public Operacion(double operando1, double operando2, string operador)
         {
             this.operando1 = operando1;
@@ -23,6 +29,10 @@ namespace Ejercicio_7
             this.operador = operador;
         }
 
+        /// <summary>
+        /// Describe el resultado de efectuar la operación solicitada en la instancia actual (this).
+        /// </summary>
+        /// <returns>String</returns>
         public string evaluar()
         {
             string res;
