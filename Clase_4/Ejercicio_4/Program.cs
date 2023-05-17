@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Ejercicio_4
+namespace Ejercicios_4_5_6
 {
     internal class Program
     {
@@ -29,7 +29,7 @@ namespace Ejercicio_4
 
             foreach (Persona persona in personas)
             {
-                Console.WriteLine($"{indice} {persona.MostrarDatos()}");
+                Console.WriteLine($"{indice}) {persona.MostrarDatos()}");
 
                 indice++;
             }

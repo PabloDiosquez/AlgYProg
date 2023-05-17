@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_4
+namespace Ejercicios_4_5_6
 {
-    internal class Persona
+    /// <summary>
+    /// Modela una persona. Una persona tiene un nombre, un DNI, una edad y una fecha de nacimiento.
+    /// </summary>
+    public class Persona
     {
+        // Atributos 
+
         private string nombre;
 
         private int dni;
@@ -16,9 +21,10 @@ namespace Ejercicio_4
 
         private DateTime fechaDeNacimiento;
 
+        // Constructores
         public Persona(string datos)
         {
-            string[] vectorDeDatos = datos.Split(" ");
+            string[] vectorDeDatos = datos.Split("\t");
 
             nombre = vectorDeDatos[0];
 
@@ -37,11 +43,21 @@ namespace Ejercicio_4
 
             edad = DateTime.Now.Year - fechaDeNacimiento.Year;
         }
+
+        /// <summary>
+        /// Describe los datos de una persona.
+        /// </summary>
+        /// <returns>String</returns>
         public string MostrarDatos()
         {
             return $"{nombre} ({edad}) {dni}";
         }
 
+        /// <summary>
+        /// Indica si la persona que recibe el mensaje (this) es más grande que la persona recibida como parámetro.
+        /// </summary>
+        /// <param name="persona">Es la persona cuya edad se quiere comparar con la persona que recibe el mensaje ➡ Persona</param>
+        /// <returns>Booleano</returns>
         public bool esMayorQue(Persona persona)
         {
             return edad > persona.edad;
