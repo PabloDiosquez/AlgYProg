@@ -41,6 +41,7 @@ namespace Clase_8
 
         /// <summary>
         /// Imprime por consola la secuencia de Fibonacci hasta el número dado por parámetro.
+        /// Precondición: El número dado debe ser un entero >= 0
         /// </summary>
         /// <param name="numero">Número - Tipo - int</param>
         /// <returns>String</returns>
@@ -55,6 +56,7 @@ namespace Clase_8
         /// <summary>
         /// Devuelve el nésimo número de la secuencia de Fibonacci. Esto es, devuelve el número que se encuentra en la posición 
         /// dada como parámetro.
+        /// Precondición: El número dado como parámetro debe ser un entero >= 0
         /// </summary>
         /// <param name="n">Posición según la cual se describe el número de la secuencia de Fibonacci correspondiente</param>
         /// <returns>Número - Tipo: int</returns>
@@ -108,12 +110,13 @@ namespace Clase_8
         }
 
         /// <summary>
-        /// 
+        /// Dado una palabra o frase, indica si es un palíndromo desde determinada letra (indexada por **índice**).
+        /// Precondición: **índice** debe ser un entero >= 0 y <= longitud de la palabra o frase dada.
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="indice"></param>
-        /// <returns></returns>
-        public static bool esPalindromoDesde_(string str, int indice)
+        /// <param name="str">Palabra o frase - Tipo: string</param>
+        /// <param name="indice">Índice - Tipo: int</param>
+        /// <returns>Booleano</returns>
+        private static bool esPalindromoDesde_(string str, int indice)
         {
             if (indice > str.Length/2)
                 return true;
@@ -126,6 +129,12 @@ namespace Clase_8
         //9) Escriba una función recursiva que reciba un número y un arreglo de números y retorne
         //la cantidad de veces que dicho número aparece en el arreglo.
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
         public static bool elNro_EstaEnElArreglo_(int numero, ArrayList numeros)
         {
             if (numeros.Count == 0)
@@ -139,6 +148,12 @@ namespace Clase_8
             return elNro_EstaEnElArreglo_(numero, numeros);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
         public static int cantidadDeVecesQueAparece_EnElArreglo_(int numero, ArrayList numeros)
         {
             if (numeros.Count == 0)
@@ -167,7 +182,6 @@ namespace Clase_8
 
             return 0;
         }
-
 
         // Función utilizada en el ejercicio 3.
 
