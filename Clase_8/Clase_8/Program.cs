@@ -7,7 +7,7 @@ namespace Clase_8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(esPalindromo("anitalavalatina"));
+
         }
 
         // 🔸 Ejercicios.
@@ -156,16 +156,18 @@ namespace Clase_8
         /// <returns></returns>
         public static int cantidadDeVecesQueAparece_EnElArreglo_(int numero, ArrayList numeros)
         {
-            if (numeros.Count == 0)
+            ArrayList copia = (ArrayList)numeros.Clone();
+
+            if (copia.Count == 0)
                 return 0;
 
-            int ultimoElemento = (int)numeros[numeros.Count-1];
+            int ultimoElemento = (int)copia[numeros.Count-1];
 
-            int totalParcial = unoSi_CeroSino(elNro_EstaEnElArreglo_(numero, numeros));
+            int totalParcial = unoSi_CeroSino(copia.Contains(numero));
 
-            numeros.Remove(ultimoElemento);
+            copia.Remove(ultimoElemento);
 
-            return cantidadDeVecesQueAparece_EnElArreglo_(numero, numeros) + totalParcial;
+            return cantidadDeVecesQueAparece_EnElArreglo_(numero, copia) + totalParcial;
         }
 
         // 🔸 Funciones auxiliares
