@@ -19,14 +19,17 @@ namespace Clase_8
 
             Console.WriteLine(suma);
 
-            // Ejemplo 2
+            // Ejemplo 2: Imprimir elementos de un arreglo.
 
-            char[] caracteres = { 'a', 'e', 'i', 'o', 'U'};
+            char[] caracteres = { 'a', 'e', 'i', 'o', 'U' };
 
             imprimirArreglo_(caracteres);
 
+            // Ejemplo 3: Cargar un vector de números.
 
+            int[] numeros = new int[3];
 
+            //cargarArreglo_(numeros);
 
         }
 
@@ -57,8 +60,8 @@ namespace Clase_8
         /// <summary>
         /// Imprime los elementos de un arreglo de caracteres desde el índice **desde** hasta el índice **hasta**.
         /// Precondiciones:
-        /// * **hasta** debe ser <= longitud del arreglo.
-        /// * **desde** <= **hasta**.
+        /// ◾ **hasta** debe ser <= longitud del arreglo.
+        /// ◾ **desde** <= **hasta**.
         /// </summary>
         /// <param name="caracteres">Arreglo de caracteres</param>
         /// <param name="desde">Número</param>
@@ -73,7 +76,34 @@ namespace Clase_8
             }
         }
 
-        
+        // Ejemplo 3: Implementar una función recursiva que permita cargar un arreglo de 10 elementos.
+
+        public static void cargarArreglo_(int[] numeros)
+        {
+            cargarArreglo_Desde_Hasta_(numeros, 0, numeros.Length);
+        }
+
+        /// <summary>
+        /// Carga números enteros en un arreglo de tamaño n, desde el índice **desde** hasta el índice **hasta**.
+        /// Precondiciones:
+        /// ◾ **hasta** debe ser <= longitud del arreglo.
+        /// ◾ **desde** <= **hasta**.
+        /// </summary>
+        /// <param name="numeros">Arreglo de números</param>
+        /// <param name="desde">Número</param>
+        /// <param name="hasta">Número</param>
+        private static void cargarArreglo_Desde_Hasta_(int[] numeros, int desde, int hasta)
+        {
+            if (desde < hasta) 
+            {
+                Console.WriteLine("Número:");
+
+                numeros[desde] = int.Parse(Console.ReadLine());
+
+                cargarArreglo_Desde_Hasta_(numeros, desde+1, hasta);
+            }
+        }
+
 
         // 🔸 Ejercicios.
 
@@ -110,12 +140,12 @@ namespace Clase_8
         /// </summary>
         /// <param name="numero">Número - Tipo - int</param>
         /// <returns>String</returns>
-        public static string fibonacciV1(int numero)
+        public static string fibonacci(int numero)
         {
             if (numero == 1)
                 return "1";
 
-            return fibonacciV1(numero - 1) + $", {fibo(numero)}";
+            return fibonacci(numero - 1) + $", {nEsimoNumeroDeFibonacci(numero)}";
         }
 
         /// <summary>
@@ -125,12 +155,12 @@ namespace Clase_8
         /// </summary>
         /// <param name="n">Posición según la cual se describe el número de la secuencia de Fibonacci correspondiente</param>
         /// <returns>Número - Tipo: int</returns>
-        private static int fibo(int n) 
+        private static int nEsimoNumeroDeFibonacci(int n) 
         {
             if (n <= 2)
                 return 1;
             
-            return fibo(n - 1) + fibo(n - 2);
+            return nEsimoNumeroDeFibonacci(n - 1) + nEsimoNumeroDeFibonacci(n - 2);
         }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
@@ -154,7 +184,7 @@ namespace Clase_8
             if (palabra == string.Empty)
                 return 0;
 
-            string ultimaLetra = palabra.Substring(palabra.Length - 1);
+            string ultimaLetra = palabra.Substring(palabra.Length - 1); 
 
             return cantidadDeVocales(palabra.Remove(palabra.Length - 1)) + unoSi_CeroSino(esVocal(ultimaLetra));
         }
@@ -187,6 +217,22 @@ namespace Clase_8
                 return true;
 
             return esPalindromoDesde_(str, indice + 1) && str[str.Length - indice - 1] == str[indice];
+        }
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
+
+        // 8) Escriba una función recursiva que reciba un ArrayList de apellidos y retorne si existe o no
+        // un apellido dado en la lista.
+
+        /// <summary>
+        /// Indica si el apellido dado está en la lista dada.
+        /// </summary>
+        /// <param name="apellido">Apellido - Tipo: string</param>
+        /// <param name="apellidos">Arreglo de apellidos - Tipo: string[]</param>
+        /// <returns>Booleano</returns>
+        private static bool apellido_EstaEnLaLista_(string apellido, string[] apellidos)
+        {
+            return palabra_EstaEnElArreglo_Desde_(apellido, apellidos, 0);
         }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
@@ -262,6 +308,27 @@ namespace Clase_8
             letra.ToLower();
 
             return letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u";
+        }
+
+        // Función utilizada en el ejercicio 8.
+
+        /// <summary>
+        /// Indica si la palabra **palabra** pertenece al arreglo dado desde la posición **desde** + 1.
+        /// Precondición: 
+        /// ◾ **desde** debe ser >= 0.
+        /// </summary>
+        /// <param name="palabra">Palabra</param>
+        /// <param name="palabras">Arreglo de palabras</param>
+        /// <param name="desde">Número</param>
+        /// <returns>Booleano</returns>
+        private static bool palabra_EstaEnElArreglo_Desde_(string palabra, string[] palabras, int desde) 
+        {
+            if (desde < palabras.Length)
+            {
+                return palabra == palabras[desde] || palabra_EstaEnElArreglo_Desde_(palabra, palabras, desde+1);
+            }
+
+            return false;
         }
 
     }
