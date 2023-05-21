@@ -105,7 +105,7 @@ namespace Clase_8
         }
 
 
-        // 🔸 Ejercicios.
+        // 🔸 EJERCICIOS.
 
         //1️⃣ Implemente una función recursiva que calcule el factorial de un número n, el cual es
         //pasado por parámetro.
@@ -171,6 +171,46 @@ namespace Clase_8
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
+        //4) Escriba una función recursiva que reciba un arreglo de números y devuelva el porcentaje de elementos pares.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
+        public static double porcentajeDeParesDelArreglo(int[] numeros) 
+        {
+            return (cantidadDeParesDelArreglo_(numeros) / numeros.Length) * 100;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
+        private static int cantidadDeParesDelArreglo_(int[] numeros)
+        {
+            return cantidadDeParesDelArreglo_Desde_(numeros, 0);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <param name="desde"></param>
+        /// <returns></returns>
+        private static int cantidadDeParesDelArreglo_Desde_(int[] numeros, int desde)
+        {
+            if (desde == numeros.Length - 1)
+            {
+                return unoSi_CeroSino(esPar_(numeros[desde]));
+            }
+
+            return cantidadDeParesDelArreglo_Desde_(numeros, desde + 1) + unoSi_CeroSino(esPar_(numeros[desde]));
+
+        }
+
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
+
         //5) Escriba una función recursiva que reciba un string y retorne la cantidad de vocales que
         //contiene.
 
@@ -230,7 +270,7 @@ namespace Clase_8
         /// <param name="apellido">Apellido - Tipo: string</param>
         /// <param name="apellidos">Arreglo de apellidos - Tipo: string[]</param>
         /// <returns>Booleano</returns>
-        private static bool apellido_EstaEnLaLista_(string apellido, string[] apellidos)
+        public static bool apellido_EstaEnLaLista_(string apellido, string[] apellidos)
         {
             return palabra_EstaEnElArreglo_Desde_(apellido, apellidos, 0);
         }
@@ -281,7 +321,9 @@ namespace Clase_8
             return cantidadDeVecesQueAparece_EnElArreglo_(numero, copia) + totalParcial;
         }
 
-        // 🔸 Funciones auxiliares
+        // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
+
+        // 🔸 FUNCIONES AUXILIARES 🥨
 
         /// <summary>
         /// Describe uno si se cumple la condición dada; describe cero en caso de no cumplirse.
@@ -308,6 +350,18 @@ namespace Clase_8
             letra.ToLower();
 
             return letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u";
+        }
+
+        // Función utilizada en el ejercicio 4.
+
+        /// <summary>
+        /// Indica si el número dado es par o no.
+        /// </summary>
+        /// <param name="numero">Número</param>
+        /// <returns>Booleano</returns>
+        private static bool esPar_(int numero)
+        {
+            return numero % 2 == 0;
         }
 
         // Función utilizada en el ejercicio 8.
