@@ -17,19 +17,26 @@ namespace Clase_8
 
             int suma = sumatoria(5);
 
-            Console.WriteLine(suma);
+            // Console.WriteLine(suma);
 
             // Ejemplo 2: Imprimir elementos de un arreglo.
 
             char[] caracteres = { 'a', 'e', 'i', 'o', 'U' };
 
-            imprimirArreglo_(caracteres);
+            // imprimirArreglo_(caracteres);
 
             // Ejemplo 3: Cargar un vector de números.
 
             int[] numeros = new int[3];
 
             //cargarArreglo_(numeros);
+
+            ArrayList sec = secuenciaFibonacci(10);
+
+            foreach (var item in sec)
+            {
+                Console.WriteLine(item);
+            }
 
         }
 
@@ -107,7 +114,7 @@ namespace Clase_8
 
         // 🔸 EJERCICIOS.
 
-        //1️⃣ Implemente una función recursiva que calcule el factorial de un número n, el cual es
+        //1️) Implemente una función recursiva que calcule el factorial de un número n, el cual es
         //pasado por parámetro.
 
         /// <summary>
@@ -168,36 +175,56 @@ namespace Clase_8
         //3) Modifique la función anterior para, que en vez de imprimir por consola, devuelva la serie
         //en un ArrayList.
 
+        public static ArrayList secuenciaFibonacci(int n) 
+        {
+            ArrayList secuencia = new ArrayList() { 1, 1};
+
+            return secuenciaFibonacciHasta_(secuencia, n);
+        }
+
+        private static ArrayList secuenciaFibonacciHasta_(ArrayList secuencia, int n)
+        {
+            if (n <= 2)
+            {
+                return secuencia;
+            }
+
+            secuencia.Add(nEsimoNumeroDeFibonacci(n));
+
+            return secuenciaFibonacciHasta_(secuencia, n-1);
+        }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
 
         //4) Escriba una función recursiva que reciba un arreglo de números y devuelva el porcentaje de elementos pares.
+
         /// <summary>
-        /// 
+        /// Describe el porcentaje de números pares en el arreglo dado.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
+        /// <param name="numeros">Arreglo de números enteros</param>
+        /// <returns>Número - Tipo: double</returns>
         public static double porcentajeDeParesDelArreglo(int[] numeros) 
         {
             return (cantidadDeParesDelArreglo_(numeros) / numeros.Length) * 100;
         }
 
         /// <summary>
-        /// 
+        /// Describe la cantidad de números pares en el arreglo dado.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
+        /// <param name="numeros">Arreglo de números enteros</param>
+        /// <returns>Número - Tipo: int</returns>
         private static int cantidadDeParesDelArreglo_(int[] numeros)
         {
             return cantidadDeParesDelArreglo_Desde_(numeros, 0);
         }
 
         /// <summary>
-        /// 
+        /// Describe la cantidad de números pares en el arreglo dado desde la posición **desde** + 1.
+        /// Precondición: **desde** debe ser < **numeros**.Length.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <param name="desde"></param>
-        /// <returns></returns>
+        /// <param name="numeros">Areglo de números</param>
+        /// <param name="desde">Número</param>
+        /// <returns>Número - Tipo: int</returns>
         private static int cantidadDeParesDelArreglo_Desde_(int[] numeros, int desde)
         {
             if (desde == numeros.Length - 1)
