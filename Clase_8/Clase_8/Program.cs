@@ -7,8 +7,73 @@ namespace Clase_8
     {
         static void Main(string[] args)
         {
+            // Ejemplo 1: Pila de ejecución 👉🏼 Reservas de memoria consecutivas donde se almacena el estado de la función en cada
+
+            // una de sus ejecuciones.
+
+            // sumatoria(5) ➡ sumatoria(4) + 5 ➡ (sumatoria (3) + 4) + 5 ➡ (sumatoria(2) + 3) + 4 + 5 
+
+            // ➡ (sumatoria(1) + 2) + 3 + 4 + 5 ➡ 1 + 2 + 3 + 4 + 5 = 15
+
+            int suma = sumatoria(5);
+
+            Console.WriteLine(suma);
+
+            // Ejemplo 2
+
+            char[] caracteres = { 'a', 'e', 'i', 'o', 'U'};
+
+            imprimirArreglo_(caracteres);
+
+
+
 
         }
+
+        // Ejemplo 1: Definir una función recursiva que reciba un número natural y devuelva la suma desde 1 hasta dicho número.
+
+        // sumatoria(n) ➡  1 + 2 + 3 + ... + (n-1) + n ➡ sumatoria (n) = sumatoria (n-1) + n (Caso recursivo)
+
+        // sumatoria (1) ➡ 1 (Caso base)
+
+        public static int sumatoria(int numero)
+        {
+            if (numero == 1)
+            {
+                return 1;
+            }
+
+            return sumatoria(numero - 1) + numero;
+
+        }
+
+        // Ejemplo 2: Implementar una algoritmo recursivo que permita imprimir un arreglo de n caracteres.
+
+        public static void imprimirArreglo_(char[] caracteres)
+        {
+            imprimirArreglo_Desde_Hasta_(caracteres, 0, caracteres.Length);
+        }
+
+        /// <summary>
+        /// Imprime los elementos de un arreglo de caracteres desde el índice **desde** hasta el índice **hasta**.
+        /// Precondiciones:
+        /// * **hasta** debe ser <= longitud del arreglo.
+        /// * **desde** <= **hasta**.
+        /// </summary>
+        /// <param name="caracteres">Arreglo de caracteres</param>
+        /// <param name="desde">Número</param>
+        /// <param name="hasta">Número</param>
+        private static void imprimirArreglo_Desde_Hasta_(char[] caracteres, int desde, int hasta)
+        {
+            if (desde < hasta)
+            {
+                Console.WriteLine(caracteres[desde]);
+
+                imprimirArreglo_Desde_Hasta_(caracteres, desde + 1, hasta);
+            }
+        }
+
+        
 
         // 🔸 Ejercicios.
 
