@@ -31,12 +31,9 @@ namespace Clase_8
 
             //cargarArreglo_(numeros);
 
-            ArrayList sec = secuenciaFibonacci(10);
+            ArrayList arrayList = new ArrayList() { 1,2,3,5,6,1,2,3};
 
-            foreach (var item in sec)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(aparicionesDelNumero_EnElArreglo_(4, arrayList));
 
         }
 
@@ -308,44 +305,33 @@ namespace Clase_8
         //la cantidad de veces que dicho número aparece en el arreglo.
 
         /// <summary>
-        /// 
+        /// Describe la cantidad de apariciones del número **numero** en el arreglo dado.
         /// </summary>
-        /// <param name="numero"></param>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
-        public static bool elNro_EstaEnElArreglo_(int numero, ArrayList numeros)
+        /// <param name="numero">Número - Tipo: int</param>
+        /// <param name="numeros">ArrayList de números enteros</param>
+        /// <returns>int</returns>
+        public static int aparicionesDelNumero_EnElArreglo_(int numero, ArrayList numeros)
         {
-            if (numeros.Count == 0)
-                return false;
-
-            else if((int)numeros[numeros.Count - 1] == numero)
-                return true;
-
-            numeros.RemoveAt(numeros.Count - 1);
-
-            return elNro_EstaEnElArreglo_(numero, numeros);
+            return aparicionesDelNumero_EnElArreglo_Desde_(numero, numeros, 0);
         }
 
         /// <summary>
-        /// 
+        /// Describe la cantidad de apariciones del número **numero** en el arreglo dado desde la posición **desde** + 1.
+        /// Precondiciones: **desde** debe ser <= que la longitud del array.
         /// </summary>
-        /// <param name="numero"></param>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
-        public static int cantidadDeVecesQueAparece_EnElArreglo_(int numero, ArrayList numeros)
+        /// <param name="numero">Número - Tipo: int</param>
+        /// <param name="numeros">Arreglo de números enteros</param>
+        /// <param name="desde">Índice - Tipo: int</param>
+        /// <returns>int</returns>
+        public static int aparicionesDelNumero_EnElArreglo_Desde_(int numero, ArrayList numeros, int desde)
         {
-            ArrayList copia = (ArrayList)numeros.Clone();
-
-            if (copia.Count == 0)
+            if (desde == numeros.Count)
+            {
                 return 0;
+            }
 
-            int ultimoElemento = (int)copia[numeros.Count-1];
-
-            int totalParcial = unoSi_CeroSino(copia.Contains(numero));
-
-            copia.Remove(ultimoElemento);
-
-            return cantidadDeVecesQueAparece_EnElArreglo_(numero, copia) + totalParcial;
+            return aparicionesDelNumero_EnElArreglo_Desde_(numero, numeros, desde + 1) + unoSi_CeroSino((int)numeros[desde] == numero);
+            
         }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
