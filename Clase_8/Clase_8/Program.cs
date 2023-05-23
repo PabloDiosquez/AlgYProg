@@ -31,9 +31,12 @@ namespace Clase_8
 
             //cargarArreglo_(numeros);
 
-            ArrayList arrayList = new ArrayList() { 1,2,3,5,6,1,2,3};
+            ArrayList fibo = secuenciaFibonacci(10);
 
-            Console.WriteLine(aparicionesDelNumero_EnElArreglo_(4, arrayList));
+            foreach (var item in fibo)
+            {
+                Console.WriteLine(item);
+            }
 
         }
 
@@ -161,7 +164,7 @@ namespace Clase_8
         /// <returns>Número - Tipo: int</returns>
         private static int nEsimoNumeroDeFibonacci(int n) 
         {
-            if (n <= 2)
+            if (n <= 1)
                 return 1;
             
             return nEsimoNumeroDeFibonacci(n - 1) + nEsimoNumeroDeFibonacci(n - 2);
@@ -172,23 +175,39 @@ namespace Clase_8
         //3) Modifique la función anterior para, que en vez de imprimir por consola, devuelva la serie
         //en un ArrayList.
 
-        public static ArrayList secuenciaFibonacci(int n) 
+        /// <summary>
+        /// Describe un arrayList con la secuencia de Fibonacci hasta el número dado. 
+        /// </summary>
+        /// <param name="n">Número - Tipo: int</param>
+        /// <returns>ArrayList</returns>
+        public static ArrayList secuenciaFibonacci(int n)
         {
-            ArrayList secuencia = new ArrayList() { 1, 1};
+            ArrayList secuencia = new ArrayList();
 
-            return secuenciaFibonacciHasta_(secuencia, n);
+            return secuenciaFibonacciDesde_Hasta_(0, n, secuencia);
         }
 
-        private static ArrayList secuenciaFibonacciHasta_(ArrayList secuencia, int n)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="desde">Número - Tipo: int</param>
+        /// <param name="hasta">Número - Tipo: int</param>
+        /// <param name="secuenciaHastaAhora">Array auxiliar - Tipo: ArrayList</param>
+        /// <returns>ArrayList</returns>
+        public static ArrayList secuenciaFibonacciDesde_Hasta_(int desde, int hasta, ArrayList secuenciaHastaAhora)
         {
-            if (n <= 2)
+
+            if (desde == hasta)
             {
-                return secuencia;
+                secuenciaHastaAhora.Add(nEsimoNumeroDeFibonacci(hasta));
+
+                return secuenciaHastaAhora;
             }
 
-            secuencia.Add(nEsimoNumeroDeFibonacci(n));
+            secuenciaHastaAhora.Add(nEsimoNumeroDeFibonacci(desde));
 
-            return secuenciaFibonacciHasta_(secuencia, n-1);
+            return secuenciaFibonacciDesde_Hasta_(desde+1, hasta, secuenciaHastaAhora);
+
         }
 
         // ◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽◽ //
