@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_1
 {
+    /// <summary>
+    /// Modela una alumno de la universidad. Un alumno tiene un legajo, un nombre y un apellido y también cuenta con una lista
+    /// de horarios de cursada.
+    /// * Inv. de Rep.:
+    /// **nombre** no debe ser vacío.
+    /// **apellido** no debe ser vacío.
+    /// </summary>
     public class Alumno
     {
+        // Atributos
+
         private int legajo;
 
         private string nombre;
@@ -17,6 +26,7 @@ namespace Ejercicio_1
 
         private ArrayList horariosDeCursadas;
 
+        // Constructor
         public Alumno(int legajo, string nombre, string apellido)
         {
             this.legajo = legajo;
@@ -29,21 +39,41 @@ namespace Ejercicio_1
         }
 
         // Propiedades (sólo lectura)
+
+        /// <summary>
+        /// Describe el legajo del alumno.
+        /// Tipo: int 
+        /// </summary>
         public int Legajo
         {
             get { return legajo; }
         }
 
+        /// <summary>
+        /// Describe el nombre del alumno.
+        /// Tipo: string
+        /// </summary>
         public string Nombre 
         {
             get { return nombre; }
         }
 
+        /// <summary>
+        /// Describe el apellido del alumno.
+        /// Tipo: string
+        /// </summary>
         public string Apellido 
         {
             get { return apellido; }
         }
 
+        /// <summary>
+        /// Inscribe al alumno a la cursada de la materia dada, en el día y horarios dados. En caso de que el horario esté ocupado,
+        /// no inscribe al alumno a la cursada.
+        /// </summary>
+        /// <param name="dia">Día de cursada - Tipo: string</param>
+        /// <param name="hora">Hora de cursada - Tipo: int</param>
+        /// <param name="materia">Materia a cursar - Tipo: string</param>
         public void InscribirseACursada(string dia, int hora, string materia) 
         {
             bool ocupado = false;
@@ -69,10 +99,13 @@ namespace Ejercicio_1
                 Console.WriteLine($"Horario ocupado: Día: {dia} - Hora: {hora}");
             }
 
-
         }
 
-        public void VerListadoDeMaterias()
+        /// <summary>
+        /// Describe el listado de materias en las cuales el alumno está inscripto.
+        /// </summary>
+        /// <returns>String</returns>
+        public string VerListadoDeMaterias()
         {
             ArrayList materias = new ArrayList();
 
@@ -84,12 +117,16 @@ namespace Ejercicio_1
                 }
             }
 
-            Console.WriteLine("▪ Materias ▪\n");
+            StringBuilder sb = new StringBuilder();
 
-            foreach (String materia in materias)
+            sb.AppendLine("▪ Materias ▪");
+
+            foreach (string materia in materias)
             {
-                Console.WriteLine(materia);
+                sb.AppendLine((string)materia);
             }
+
+            return sb.ToString();
 
         }
 
