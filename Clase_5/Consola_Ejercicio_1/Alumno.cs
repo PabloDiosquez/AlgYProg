@@ -102,34 +102,45 @@ namespace Ejercicio_1
         }
 
         /// <summary>
-        /// Describe el listado de materias en las cuales el alumno está inscripto.
+        /// Describe la lista de materias en las cuales el alumno está inscripto.
+        /// </summary>
+        /// <returns>ArrayList(string)</returns>
+        private ArrayList listaDeMateriasDeCursada()
+        {
+            ArrayList materias = new ArrayList();
+
+            foreach (HorarioDeCursada cursada in horariosDeCursadas)
+            {
+                if (!materias.Contains((string)cursada.Materia))
+                {
+                    materias.Add(cursada.Materia);
+                }
+            }
+
+            return materias;
+        }
+
+        /// <summary>
+        /// Describe las materias en las cuales el alumno está inscripto.
         /// </summary>
         /// <returns>String</returns>
         public string VerListadoDeMaterias()
         {
-            ArrayList materias = new ArrayList();
-
-            foreach (HorarioDeCursada horarios in horariosDeCursadas)
-            {
-                if (!materias.Contains(horarios.Materia))
-                {
-                    materias.Add(horarios.Materia);
-                }
-            }
-
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("▪ Materias ▪");
 
-            foreach (string materia in materias)
+            foreach (string materia in listaDeMateriasDeCursada())
             {
                 sb.AppendLine((string)materia);
             }
 
             return sb.ToString();
-
         }
 
+        /// <summary>
+        /// Describe los horarios de cursada del alumno.
+        /// </summary>
         public void VerHorariosDeCursada()
         {
             foreach (HorarioDeCursada horario in horariosDeCursadas)
@@ -138,6 +149,10 @@ namespace Ejercicio_1
             }
         }
 
+        /// <summary>
+        /// Sobrecarga del método ToString() que describe el legajo, el nombre y el apellido del alumno. 
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return $"Legajo: {legajo} - Nombre: {nombre} - Apellido: {apellido}";
