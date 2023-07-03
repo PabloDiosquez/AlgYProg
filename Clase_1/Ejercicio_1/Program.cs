@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Ejercicio_1
 {
@@ -12,24 +13,37 @@ namespace Ejercicio_1
 
             Console.WriteLine("Nombre usuario:");
 
-            SaludarYContarCaracteres(Console.ReadLine());
+            Console.WriteLine(saludarYContarCaracteres(Console.ReadLine()));
 
         }
 
-        public static void SaludarYContarCaracteres(string nombreUsuario)
+        /// <summary>
+        /// Describe un string con un mensaje de bienvenida para el usuario dado y la cantidad de caracteres de la oración que 
+        /// lo recibe.
+        /// </summary>
+        /// <param name="nombreUsuario">Nombre del usuario</param>
+        /// <returns>String</returns>
+        public static string saludarYContarCaracteres(string nombreUsuario)
         {
-            //int contador = 0;
+            string mensajeDeBienvenida = $"Hola {nombreUsuario}, bienvenido a la materia";
 
-            string mensaje = $"Hola {nombreUsuario}, bienvenido a la materia";
+            return $"{mensajeDeBienvenida} ({contadorDeCaracteres(mensajeDeBienvenida)})";
+        }
 
-            //foreach (char caracter in mensaje)
-            //{
-            //    contador++;
-            //}
+        /// <summary>
+        /// Describe la cantidad de caracteres de la cadena de caracteres dada.
+        /// </summary>
+        /// <param name="caracteres">Cadena de caracteres</param>
+        /// <returns>Número</returns>
+        private static int contadorDeCaracteres(string caracteres)
+        {
+            int contador = 0;
 
-            //Console.WriteLine($"{mensaje} ({contador})");
-
-            Console.WriteLine($"{mensaje} ({mensaje.Length})");
+            foreach (char caracter in caracteres)
+            {
+                contador++;
+            }
+            return contador;
         }
     }
 }
