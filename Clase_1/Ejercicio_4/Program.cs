@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Ejercicio_4
 {
@@ -9,13 +10,159 @@ namespace Ejercicio_4
             //Escriba un programa de aplicación que lea por teclado una secuencia de números y que imprima el valor máximo, el
             //valor mínimo de dicho conjunto y el valor promedio.
 
+            maximoMinimoYPromedio();
+        }
+
+        private static void maximoMinimoYPromedio()
+        {
+            ArrayList numeros = cargarNumeros();
+
+            leerNumeros(numeros);
+
+            Console.WriteLine($"Máximo: {maximo(numeros)}");
+            Console.WriteLine($"Mínimo: {minimo(numeros)}");
+            Console.WriteLine($"Promedio: {sumatoria(numeros) / numeros.Count}");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static ArrayList cargarNumeros()
+        {
+            ArrayList numeros = new ArrayList(); 
+            do
+            {
+                numeros.Add(validarNumero());
+
+                Console.WriteLine("¿Desea continuar? (S/N)");
+
+            } while (Console.ReadLine().ToUpper() == "S");
+
+            return numeros;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeros"></param>
+        private static void leerNumeros(ArrayList numeros)
+        {
+            foreach (int numero in numeros)
+            {
+                Console.WriteLine(numero);
+            }
+        }
+
+        /// <summary>
+        /// Precondiciones:
+        /// * El arrayList dado no debe ser vacío.
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
+        private static int maximo(ArrayList numeros)
+        {
+            int maximoAlMomento = (int)numeros[0];
+
+            foreach (int numero in numeros)
+            {
+                maximoAlMomento = maximoEntre(maximoAlMomento, numero);
+            }
+            return maximoAlMomento;
+        }
+
+        /// <summary>
+        /// Precondiciones:
+        /// * El arrayList dado no debe ser vacío.
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
+        private static int minimo(ArrayList numeros)
+        {
+            int minimoAlMomento = (int)numeros[0];
+
+            foreach (int numero in numeros)
+            {
+                minimoAlMomento = minimoEntre(minimoAlMomento, numero);
+            }
+            return minimoAlMomento;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeros"></param>
+        /// <returns></returns>
+        private static int sumatoria(ArrayList numeros)
+        {
+            int sumaAlMomento = 0;
+
+            foreach (int numero in numeros)
+            {
+                sumaAlMomento += numero;
+            }
+            return sumaAlMomento;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private static int validarNumero()
+        {
+            int numero;
+
+            Console.WriteLine("Ingrese un número:");
+
+            while (!int.TryParse(Console.ReadLine(), out numero))
+            {
+                Console.WriteLine("Asegúrese de ingresar un número. Intente de nuevo.");
+            }
+
+            return numero;
+        }
+
+        /// <summary>
+        /// Describe el número más grande entre los dos números dados.
+        /// </summary>
+        /// <param name="numero1">Número entero</param>
+        /// <param name="numero2">Número entero</param>
+        /// <returns>Número entero</returns>
+        private static int maximoEntre(int numero1, int numero2)
+        {
+            if (numero1 >= numero2)
+            {
+                return numero1;
+            }
+            return numero2;
+        }
+
+        /// <summary>
+        /// Describe el número más chico entre los dos números dados.
+        /// </summary>
+        /// <param name="numero1">Número entero</param>
+        /// <param name="numero2">Número entero</param>
+        /// <returns>Número entero</returns>
+        private static int minimoEntre(int numero1, int numero2)
+        {
+            if (numero1 <= numero2)
+            {
+                return numero1;
+            }
+            return numero2;
+        }
+
+        // Función general ⛷ 
+
+        public static void maximoMinimoPromedio()
+        {
             int numero, maximo = 0, minimo = 0;
 
             int contador = 0, sumador = 0;
 
             double promedio = 0;
 
-            bool flagMaximo = true, flagMinimo = true;  
+            bool flagMaximo = true, flagMinimo = true;
 
             do
             {
@@ -31,7 +178,7 @@ namespace Ejercicio_4
 
                     flagMaximo = false;
                 }
-                else 
+                else
                 {
                     if (numero > maximo)
                     {
@@ -47,7 +194,7 @@ namespace Ejercicio_4
 
                     flagMinimo = false;
                 }
-                else 
+                else
                 {
                     if (numero < minimo)
                     {
@@ -59,7 +206,7 @@ namespace Ejercicio_4
 
                 sumador += numero;
 
-                Console.WriteLine("¿Desea seguir cargando números? (S/N)");      
+                Console.WriteLine("¿Desea seguir cargando números? (S/N)");
 
             } while (Console.ReadLine().ToUpper() == "S");
 
@@ -70,7 +217,6 @@ namespace Ejercicio_4
             promedio = sumador / contador;
 
             Console.WriteLine($"Promedio: {promedio.ToString("0.00")}");
-
         }
 
     }
