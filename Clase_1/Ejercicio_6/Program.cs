@@ -13,31 +13,55 @@ namespace Ejercicio_6
             SumarYContar();
         }
 
-        public static void SumarYContar()
+        private static void SumarYContar()
         {
             int numero, contador = 0, sumador = 0;
 
-            do
+            while (true)
             {
-                Console.WriteLine("Ingrese un número: (Termina con 0)");
+                menuInicial();
 
-                numero = int.Parse(Console.ReadLine());
+                numero = asignarNumero();
 
-                if (numero == 0)
-                {
-                    break;
-                }
+                if (numero == 0) break;
 
                 sumador += numero;
 
                 contador++;
 
-            } while (true);
+                mostrarSumaParcial(sumador);
+            }
 
+            menuFinal(contador, sumador);
+
+        }
+        private static int asignarNumero()
+        {
+            int numero;
+
+            while (!int.TryParse(Console.ReadLine(), out numero))
+            {
+                Console.WriteLine("Asegúrese de ingresar un número entero. Intente de nuevo.");
+            }
+
+            return numero;
+        }
+
+        private static void menuInicial()
+        {
+            Console.WriteLine("Ingrese un número: (Termina con 0)");
+        }
+
+        private static void mostrarSumaParcial(int suma) 
+        {
+            Console.WriteLine($"Suma parcial: {suma}");
+        }
+
+        private static void menuFinal(int contador, int suma)
+        {
             Console.WriteLine($"Cantidad de números: {contador}");
 
-            Console.WriteLine($"Suma total: {sumador}");
-
+            Console.WriteLine($"Suma total: {suma}");
         }
     }
 }
