@@ -52,12 +52,16 @@ namespace Ejercicio_5
         }
 
         /// <summary>
-        /// 
+        /// Imprime todos los números desde **desde** y hasta **hasta** si son múltiplos de **primerNumero** y de 
+        /// **segundoNumero**.
+        /// Precondición:
+        /// * **primerNumero** y **segundoNumero** deben ser distintos de 0.
+        /// * **desde** debe ser <= **hasta**.
         /// </summary>
-        /// <param name="primerNumero"></param>
-        /// <param name="segundoNumero"></param>
-        /// <param name="desde"></param>
-        /// <param name="hasta"></param>
+        /// <param name="primerNumero">Numero</param>
+        /// <param name="segundoNumero">Numero</param>
+        /// <param name="desde">Numero</param>
+        /// <param name="hasta">Numero</param>
         private static void multiplosDe_Y_Desde_Hasta_(int primerNumero, int segundoNumero, int desde, int hasta)
         {
             for (int numero = desde; numero < hasta; numero++)
@@ -67,10 +71,10 @@ namespace Ejercicio_5
         }
 
         /// <summary>
-        /// 
+        /// Imprime por consola el número dado si se cumple la condición dada.
         /// </summary>
-        /// <param name="numero"></param>
-        /// <param name="condicion"></param>
+        /// <param name="numero">Número</param>
+        /// <param name="condicion">Bool</param>
         private static void imprimirNumero_Si_(int numero, bool condicion)
         {
             if (condicion) Console.WriteLine(numero);

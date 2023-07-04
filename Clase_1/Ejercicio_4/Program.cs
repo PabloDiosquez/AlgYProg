@@ -20,14 +20,16 @@ namespace Ejercicio_4
             leerNumeros(numeros);
 
             Console.WriteLine($"Máximo: {maximo(numeros)}");
+
             Console.WriteLine($"Mínimo: {minimo(numeros)}");
+
             Console.WriteLine($"Promedio: {sumatoria(numeros) / numeros.Count}");
         }
 
         /// <summary>
-        /// 
+        /// Describe un array dinámico de números enteros leídos por consola.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ArrayList de núemros enteros.</returns>
         public static ArrayList cargarNumeros()
         {
             ArrayList numeros = new ArrayList(); 
@@ -43,9 +45,9 @@ namespace Ejercicio_4
         }
 
         /// <summary>
-        /// 
+        /// Muestra por consola los números enteros que pertenecen al array de números dado.
         /// </summary>
-        /// <param name="numeros"></param>
+        /// <param name="numeros">ArrayList de números enteros.</param>
         private static void leerNumeros(ArrayList numeros)
         {
             foreach (int numero in numeros)
@@ -55,11 +57,12 @@ namespace Ejercicio_4
         }
 
         /// <summary>
+        /// Describe el número más grande del array de números dado
         /// Precondiciones:
         /// * El arrayList dado no debe ser vacío.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
+        /// <param name="numeros">ArrayList de números enteros.</param>
+        /// <returns>Número entero</returns>
         private static int maximo(ArrayList numeros)
         {
             int maximoAlMomento = (int)numeros[0];
@@ -72,11 +75,12 @@ namespace Ejercicio_4
         }
 
         /// <summary>
+        /// Describe el número más chico del array de números dado.
         /// Precondiciones:
         /// * El arrayList dado no debe ser vacío.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
+        /// <param name="numeros">ArrayList de números enteros.</param>
+        /// <returns>Número entero</returns>
         private static int minimo(ArrayList numeros)
         {
             int minimoAlMomento = (int)numeros[0];
@@ -89,10 +93,10 @@ namespace Ejercicio_4
         }
 
         /// <summary>
-        /// 
+        /// Describe la suma de los números pertenecientes al array dado.
         /// </summary>
-        /// <param name="numeros"></param>
-        /// <returns></returns>
+        /// <param name="numeros">ArrayList de números</param>
+        /// <returns>Número entero</returns>
         private static int sumatoria(ArrayList numeros)
         {
             int sumaAlMomento = 0;
@@ -105,9 +109,9 @@ namespace Ejercicio_4
         }
 
         /// <summary>
-        /// 
+        /// Describe un número entero leído por consola.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Número</returns>
         private static int validarNumero()
         {
             int numero;
