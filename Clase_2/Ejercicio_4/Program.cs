@@ -25,7 +25,11 @@ namespace Ejercicio_4
             Console.WriteLine($"Promedio de caracteres por palabra: {ObtenerPromedioDeCaracteresPorPalabraEnElArray(palabras)}");
         }
 
-        public static ArrayList CargarPalabras()
+        /// <summary>
+        /// Describe un arrayList de palabras cargadas por teclado.
+        /// </summary>
+        /// <returns>ArrayList de palabras</returns>
+        private static ArrayList CargarPalabras()
         {
             ArrayList palabras = new ArrayList();
 
@@ -37,11 +41,8 @@ namespace Ejercicio_4
 
                 palabra = Console.ReadLine();
 
-                if (palabra == string.Empty)
-                {
-                    break;
-                }
-
+                if (palabra == string.Empty) break;
+               
                 palabras.Add(palabra);
 
             }
@@ -49,27 +50,33 @@ namespace Ejercicio_4
             return palabras;
         }
 
-        public static double ObtenerPorcentajeDePalabrasQueComienzanCon_(ArrayList palabras, char letra)
+        /// <summary>
+        /// Describe el porcentaje de palabras del arrayList dado que comienzan con el caracter dado.
+        /// Precondición:
+        /// * El arrayList no debe contener palabras nulas ni vacías.
+        /// </summary>
+        /// <param name="palabras">ArrayList de palabras</param>
+        /// <param name="letra">Caracter - Char</param>
+        /// <returns>Double</returns>
+        private static double ObtenerPorcentajeDePalabrasQueComienzanCon_(ArrayList palabras, char letra)
         {
-            if (palabras.Count == 0)
-            {
-                return 0;
-            }
-
+            if (palabras.Count == 0) return 0;
+            
             int contador = 0;
 
             foreach (string palabra in palabras)
             {
-                if (Palabra_ComienzaCon_(palabra, letra))
-                {
-                    contador++;
-                }
+                if (Palabra_ComienzaCon_(palabra, letra)) contador++;
             }
 
             return (contador / (double)palabras.Count) * 100;
         }
 
-        public static void ImprimirLongitudDeCadaPalabraLeida(ArrayList palabras)
+        /// <summary>
+        /// Imprime por consola la longitud de cada palabra del arrayList de palabras dado.
+        /// </summary>
+        /// <param name="palabras">ArrayList de palabras - [String]</param>
+        private static void ImprimirLongitudDeCadaPalabraLeida(ArrayList palabras)
         {
             foreach (string palabra in palabras)
             {
@@ -77,15 +84,19 @@ namespace Ejercicio_4
             }
         }
 
-        public static double ObtenerPromedioDeCaracteresPorPalabraEnElArray(ArrayList palabras) 
+        /// <summary>
+        /// Describe el promedio de caracteres por palabra en el arrayList de palabras dado.
+        /// Precondiciones:
+        /// * El arrayList no debe contener palabras nulas ni vacías.
+        /// </summary>
+        /// <param name="palabras">ArrayList de palabras</param>
+        /// <returns>Promedio - Double</returns>
+        private static double ObtenerPromedioDeCaracteresPorPalabraEnElArray(ArrayList palabras) 
         {
             int longitudDelArray = palabras.Count;
 
-            if (longitudDelArray == 0)
-            {
-                return 0;
-            }
-
+            if (longitudDelArray == 0) return 0;
+            
             int sumador = 0;
 
             foreach (string palabra in palabras)
@@ -96,7 +107,15 @@ namespace Ejercicio_4
             return sumador / longitudDelArray;
         }
 
-        public static bool Palabra_ComienzaCon_(string palabra, char letra)
+        /// <summary>
+        /// Indica si la palabra dada comienza con el caracter dado.
+        /// Precondición:
+        /// * La palabra dada no debe ser nula ni vacía.
+        /// </summary>
+        /// <param name="palabra">Palabra - String</param>
+        /// <param name="letra">Caracter - Char</param>
+        /// <returns>Bool</returns>
+        private static bool Palabra_ComienzaCon_(string palabra, char letra)
         {
             return palabra.ToUpper()[0] == letra || palabra.ToLower()[0] == letra;
         }

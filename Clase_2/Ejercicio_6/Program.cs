@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ejercicio_6
 {
@@ -9,18 +10,30 @@ namespace Ejercicio_6
             //Defina una función que reciba una palabra y retorne en un vector la cantidad de cada una de las vocales que
             //contiene.
 
-            Console.WriteLine("Palabra: ");
+            //ContarVocales();
 
-            foreach (string st in ContarVocalesDeLaPalabra(Console.ReadLine()))
-            {
-                Console.WriteLine(st);
-            }
+            MostrarVector(vectorCantidadDeVocalesDe_(Console.ReadLine()));
 
         }
 
-        public static string[] ContarVocalesDeLaPalabra(string palabra)
+        private static void ContarVocales()
         {
-            int cantidadLetraA=0, cantidadLetraE=0, cantidadLetraI=0, cantidadLetraO=0, cantidadLetraU=0;
+            Console.WriteLine("Palabra: ");
+
+            foreach (string st in vectorConCantidadVocalesEn_(Console.ReadLine()))
+            {
+                Console.WriteLine(st);
+            }
+        }
+
+        /// <summary>
+        /// Describe un vector con la cantidad de repeticiones de cada vocal en la palabra dada.
+        /// </summary>
+        /// <param name="palabra">Palabra - String</param>
+        /// <returns>Vector [String] - string []</returns>
+        private static string[] vectorConCantidadVocalesEn_(string palabra)
+        {
+            int cantidadLetraA = 0, cantidadLetraE = 0, cantidadLetraI = 0, cantidadLetraO = 0, cantidadLetraU = 0;
 
             string[] vocales = new string[5];
 
@@ -42,7 +55,7 @@ namespace Ejercicio_6
                         break;
                     case 'u':
                         cantidadLetraU++;
-                        break;   
+                        break;
                 }
             }
 
@@ -54,5 +67,71 @@ namespace Ejercicio_6
 
             return vocales;
         }
+
+        // ----------------------------------------------------------------------------
+
+        /// <summary>
+        /// Imprime el vector de números dado por consola.
+        /// </summary>
+        /// <param name="vector">Vector[Número] - int[]</param>
+        private static void MostrarVector(int[] vector)
+        {
+            foreach (int numero in vector)
+            {
+                Console.WriteLine(numero);
+            }
+        }
+
+        /// <summary>
+        /// Describe un vector de enteros con la cantidad de repeticiones de cada vocal en la palabra dada.
+        /// Observaciones:
+        /// * Cada componente del vector hace referencia a una vocal en el orden esperado. Esto es, la primer componente
+        /// hace referencia a las repeticiones de la "a", la segunda de la "e" y así siguiendo.
+        /// </summary>
+        /// <param name="palabra">String</param>
+        /// <returns>Vector[Número] - int[]</returns>
+        private static int[] vectorCantidadDeVocalesDe_(string palabra) 
+        {
+            int[] cantidadDeVocales = new int[5] { 0,0,0,0,0};
+
+            foreach (char letra in palabra)
+            {
+                cantidadDeVocales = vectorDeVocales_Actualizado(cantidadDeVocales, letra);
+            }
+
+            return cantidadDeVocales;
+        }
+
+        /// <summary>
+        /// Describe el vector de repeticiones de las vocales actualizado.
+        /// </summary>
+        /// <param name="vocales">Vector[Número] - int[]</param>
+        /// <param name="letra">Letra - Char</param>
+        /// <returns>Vector[Número] - int[]</returns>
+        private static int[] vectorDeVocales_Actualizado(int[] vocales, char letra)
+        {
+            switch (letra)
+            {
+                case 'a':
+                    vocales[0]++;
+                    break;
+                case 'e':
+                    vocales[1]++;
+                    break;
+                case 'i':
+                    vocales[2]++;
+                    break;
+                case 'o':
+                    vocales[3]++;   
+                    break;
+                case 'u':
+                    vocales[4]++;
+                    break;
+                default:
+                    break;
+            }
+
+            return vocales;
+        } 
     }
 }
